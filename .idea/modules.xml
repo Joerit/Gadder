@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Gadder.iml" filepath="$PROJECT_DIR$/Gadder.iml" />
+      <module fileurl="file://D:\AP\EA2\Sem1\MobileDevelopment\GADDR\Gadder\Gadder.iml" filepath="D:\AP\EA2\Sem1\MobileDevelopment\GADDR\Gadder\Gadder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\AP\EA2\Sem1\MobileDevelopment\GADDR\Gadder\app\app.iml" filepath="D:\AP\EA2\Sem1\MobileDevelopment\GADDR\Gadder\app\app.iml" />
     </modules>
   </component>
 </project>
