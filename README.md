@@ -5,7 +5,7 @@ Project voor app of the year, 2017-2018
 Team leden:
 Joeri Temmerman
 Ruben Nemes
-Kevin 'Scazione' Davis
+Kevin Davis
 
 
 # Korte inleiding
