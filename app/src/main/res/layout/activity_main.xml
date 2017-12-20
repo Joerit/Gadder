@@ -48,6 +48,7 @@
             android:layout_alignStart="@+id/txtPassword"
             android:layout_below="@+id/txtPassword"
             android:layout_marginTop="19dp"
+            android:onClick="onClick"
             android:text="Login" />
 
         <Button

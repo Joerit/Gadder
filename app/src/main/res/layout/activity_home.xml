@@ -18,7 +18,7 @@
             android:layout_height="50pt"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:text="TextView" />
+            android:text="NEXT MEETING" />
 
         <TextView
             android:id="@+id/textView3"
@@ -26,14 +26,45 @@
             android:layout_height="30pt"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView2"
-            android:text="TextView" />
+            android:text="MY EVENTS" />
+
+
 
         <ListView
+            android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="100pt"
+            android:layout_height="150pt"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView3" />
+            android:layout_below="@+id/textView3" >
 
+        </ListView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/listView"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Button"
+                />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Button"
+                />
+        </LinearLayout>
 
     </RelativeLayout>
+
+
 </android.support.constraint.ConstraintLayout>
