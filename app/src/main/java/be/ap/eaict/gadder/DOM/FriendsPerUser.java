@@ -26,9 +26,7 @@ private int status;  // 0 = INVITED | 1 = ACCEPTED | -1 = DECLINED
         this.userId = userId;
     }
 
-    public int getFriendId() {
-        return friendId;
-    }
+    public int getFriendId() { return friendId; }
 
     public void setFriendId(int friendId) {
         this.friendId = friendId;
