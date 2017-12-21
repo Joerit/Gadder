@@ -12,26 +12,74 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <TextView
-            android:id="@+id/textView2"
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Friends"
+                android:background = "@drawable/roundedbutton"/>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="Create"
+                android:background = "@drawable/roundedbutton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            android:layout_above="@id/buttons">
+
+
+            <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50pt"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="NEXT MEETING" />
+            android:layout_height="50pt">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="30pt"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView2"
-            android:text="MY EVENTS" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50pt"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="NEXT MEETING" />
+
+                <Button
+                    android:id="@+id/btnSettings"
+                    android:layout_width="20pt"
+                    android:layout_height="20pt"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="10dp"
+                    android:background = "@drawable/roundbutton"
+                    android:text="#S" />
+            </RelativeLayout>
 
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="30pt"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2"
+                android:text="MY EVENTS" />
 
-        <ListView
-            android:id="@+id/listView"
+            <ListView
+            android:id="@+id/listViewEvents"
             android:layout_width="match_parent"
             android:layout_height="150pt"
             android:layout_alignParentStart="true"
@@ -40,28 +88,6 @@
         </ListView>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_below="@+id/listView"
-            android:gravity="bottom">
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="Button"
-                />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="Button"
-                />
         </LinearLayout>
 
     </RelativeLayout>

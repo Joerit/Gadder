@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
 import be.ap.eaict.gadder.DOM.Event;
+import be.ap.eaict.gadder.R;
 
 /**
  * Created by Kevin-Laptop on 20/12/2017.
@@ -30,7 +32,8 @@ public class MyAdapter extends ArrayAdapter<Event> {
         View rowView = inflater.inflate(R.layout.customlayout, parent, false);
 
         //Insert data
-
+        TextView txtNaam = (TextView)rowView.findViewById(R.id.txtNaam);
+        txtNaam.setText(values.get(position).getName());
         //
 
         return rowView;

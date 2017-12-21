@@ -13,19 +13,29 @@ public class Event {
     private String place;
     private String description;
     private int creator;
-    private Calendar startDate;
-    private Calendar endDate;
+    private int startDay;
+    private int startMonth;
+    private int startYear;
+    private int endDay;
+    private int endMonth;
+    private int endYear;
 
 
 
-    public Event(int id, String name, String place, String description, int creator, Calendar startDate, Calendar endDate){
+
+    public Event(int id, String name, String place, String description, int creator,
+                 int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear){
         this.id = id;
         this.name = name;
         this.place = place;
         this.description = description;
         this.creator = creator;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.startDay = startDay;
+        this.startMonth = startMonth;
+        this.startYear = startYear;
+        this.endDay = endDay;
+        this.endMonth = endMonth;
+        this.endYear = endYear;
     }
 
     public int getId() {
@@ -68,19 +78,51 @@ public class Event {
         this.creator = creator;
     }
 
-    public Calendar getStartDate() {
-        return startDate;
+    public int getStartDay() {
+        return startDay;
     }
 
-    public void setStartDate(Calendar startDate) {
-        this.startDate = startDate;
+    public void setStartDay(int startDay) {
+        this.startDay = startDay;
     }
 
-    public Calendar getEndDate() {
-        return endDate;
+    public int getStartMonth() {
+        return startMonth;
     }
 
-    public void setEndDate(Calendar endDate) {
-        this.endDate = endDate;
+    public void setStartMonth(int startMonth) {
+        this.startMonth = startMonth;
+    }
+
+    public int getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(int startYear) {
+        this.startYear = startYear;
+    }
+
+    public int getEndDay() {
+        return endDay;
+    }
+
+    public void setEndDay(int endDay) {
+        this.endDay = endDay;
+    }
+
+    public int getEndMonth() {
+        return endMonth;
+    }
+
+    public void setEndMonth(int endMonth) {
+        this.endMonth = endMonth;
+    }
+
+    public int getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(int endYear) {
+        this.endYear = endYear;
     }
 }

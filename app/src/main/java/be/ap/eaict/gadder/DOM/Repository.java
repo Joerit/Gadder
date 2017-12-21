@@ -22,6 +22,8 @@ public class Repository implements IRepository {
         List<Event> Events = new ArrayList<>();
 
         //DUMMY DATA TOEVOEGEN
+            Events.add(new Event(0, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
+            Events.add(new Event(1, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
 
         //
 
