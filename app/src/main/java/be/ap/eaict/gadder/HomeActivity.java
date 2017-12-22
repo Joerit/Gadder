@@ -3,6 +3,7 @@ package be.ap.eaict.gadder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,15 +25,14 @@ public class HomeActivity extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(this, DummyRepository.getInstance().getEvents());
         eventsList.setAdapter(myAdapter);
 
-        final ListView listViewEvents = (ListView) findViewById(R.id.listViewEvents);
-
         final List<Event> values;
         values = DummyRepository.getInstance().getEvents();
 
-        listViewEvents.setOnItemClickListener(
+
+        eventsList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         openActivity(values.get(position));
                     }
                 }

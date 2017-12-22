@@ -1,0 +1,13 @@
+package be.ap.eaict.gadder;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class FriendslistActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_friendslist);
+    }
+}

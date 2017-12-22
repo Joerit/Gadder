@@ -18,44 +18,13 @@
         <TextView
             android:id="@+id/txtNaam"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="3"
             android:text="TextView"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="8dp" />
 
-        <Button
-            android:id="@+id/btnAccept"
-            android:layout_width="0dp"
-            android:layout_height="25pt"
-            android:layout_weight="1"
-            android:text="OK"
-            android:visibility="visible"
-            android:layout_marginTop="2pt"
-            android:layout_marginBottom="2pt"
-            android:background = "@drawable/roundbutton"/>
 
-        <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="0dp"
-            android:layout_height="25pt"
-            android:layout_weight="1"
-            android:text="ED"
-            android:visibility="visible"
-            android:layout_marginTop="2pt"
-            android:layout_marginBottom="2pt"
-            android:background = "@drawable/roundbutton"/>
-
-        <Button
-            android:id="@+id/btnDecline"
-            android:layout_width="0dp"
-            android:layout_height="25pt"
-            android:layout_weight="1"
-            android:text="DE"
-            android:visibility="visible"
-            android:layout_marginTop="2pt"
-            android:layout_marginBottom="2pt"
-            android:background = "@drawable/roundbutton"/>
 
     </LinearLayout>
 
