@@ -21,6 +21,10 @@
         <activity android:name=".CreateActivity" />
         <activity android:name=".FriendslistActivity" />
         <activity android:name=".SettingsActivity" />
+        <activity
+            android:name=".FriendlistActivity"
+            android:label="@string/title_activity_friendlist"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
