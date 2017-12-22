@@ -7,13 +7,13 @@ import java.util.List;
  * Created by Kevin-Laptop on 20/12/2017.
  */
 
-public class Repository implements IRepository {
+public class DummyRepository implements IRepository {
 
     private static IRepository repo = null;
 
     public static IRepository getInstance() {
         if (repo == null) {
-            repo = new Repository();
+            repo = new DummyRepository();
         }
         return repo;
     }

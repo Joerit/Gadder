@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context="be.ap.eaict.gadder.DetailsActivity">
 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="68dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentBottom="true">
+
+        <com.sothree.slidinguppanel.SlidingUpPanelLayout
+            xmlns:sothree="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sliding_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            sothree:umanoPanelHeight="68dp"
+            sothree:umanoShadowHeight="4dp">
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="230dp"
@@ -18,12 +39,14 @@
             android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:text="NAME" />
 
         <TextView
             android:id="@+id/txtCreator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:text="CREATED BY ..." />
 
         <TextView
@@ -32,6 +55,7 @@
             android:layout_height="wrap_content"
             android:text="PLACE"
             android:gravity="center_horizontal"
+            android:layout_alignParentTop="true"
             android:textSize="17pt"/>
 
         <TextView
@@ -40,6 +64,7 @@
             android:layout_height="wrap_content"
             android:text="DATE"
             android:gravity="center_horizontal"
+            android:layout_alignParentTop="true"
             android:textSize="17pt"/>
 
         <TextView
@@ -48,7 +73,13 @@
             android:layout_height="wrap_content"
             android:text="DESCRIPTION"
             android:gravity="center_horizontal"
+            android:layout_alignParentTop="true"
             android:textSize="17pt"/>
 
+
+
+
     </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
