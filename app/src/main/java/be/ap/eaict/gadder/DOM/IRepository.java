@@ -8,5 +8,18 @@ import java.util.List;
 
 public interface IRepository {
 
-    List<Event> getEvents();
+    // return all events of  user
+    List<Event> getEvents(User user);
+    // push created event to the server, returns true = success, false = failure
+    boolean addEvent(Event event);
+
+    // returns all friends of user
+    List<User> getFriends(User user);
+    // returns list of all users who match name
+    List<User> findUserByName(String name);
+    // push friendship between users to server
+    boolean addFriend(User user1, User user2);
+
+    // returns all events with open invitation for user
+    List<Event> getInvitations(User user);
 }
