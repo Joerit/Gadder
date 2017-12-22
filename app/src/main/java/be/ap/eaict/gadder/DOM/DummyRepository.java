@@ -30,4 +30,19 @@ public class DummyRepository implements IRepository {
 
         return Events;
     }
+
+
+    public List<User> getUsers(){
+        List<User> Users = new ArrayList<>();
+
+        //DUMMY DATA TOEVOEGEN
+        Users.add(new User(0, "Scazi", "kevin-davis@hotmail.com", "kevin123"));
+        Users.add(new User(1, "Ratboy", "joeri.temmerman@hotmail.com", "joeri123"));
+        Users.add(new User(2, "Beckerich", "ruben.nemes@msn.com", "ruben123"));
+
+        //
+
+
+        return Users;
+    }
 }

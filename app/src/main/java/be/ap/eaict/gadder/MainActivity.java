@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
 
 import static be.ap.eaict.gadder.R.layout.activity_main;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        MyAdapter myAdapter = new MyAdapter(this, DummyRepository.getInstance().getEvents());
+        OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents());
         openActivity();
     }
 
