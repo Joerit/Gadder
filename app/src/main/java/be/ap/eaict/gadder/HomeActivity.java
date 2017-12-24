@@ -11,6 +11,7 @@ import java.util.List;
 
 import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.Event;
+import be.ap.eaict.gadder.DOM.User;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -21,13 +22,13 @@ public class HomeActivity extends AppCompatActivity {
 
         final ListView eventsList = (ListView) findViewById(R.id.listViewEvents);
 
-        MyAdapter myAdapter = new MyAdapter(this, DummyRepository.getInstance().getEvents());
+        MyAdapter myAdapter = new MyAdapter(this, DummyRepository.getInstance().getEvents(new User(0, "", "", "")));
         eventsList.setAdapter(myAdapter);
 
         final ListView listViewEvents = (ListView) findViewById(R.id.listViewEvents);
 
         final List<Event> values;
-        values = DummyRepository.getInstance().getEvents();
+        values = DummyRepository.getInstance().getEvents(new User(0, "", "", ""));
 
         listViewEvents.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
