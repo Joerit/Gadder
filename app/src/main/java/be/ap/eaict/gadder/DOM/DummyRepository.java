@@ -54,6 +54,7 @@ public class DummyRepository implements IRepository {
     @Override
     public List<Event> getInvitations(User user) {
         return null;
+    }
 
     public List<User> getUsers(){
         List<User> Users = new ArrayList<>();

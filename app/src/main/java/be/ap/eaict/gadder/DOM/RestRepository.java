@@ -60,4 +60,9 @@ public class RestRepository implements IRepository {
     public List<Event> getInvitations(User user) {
         return null;
     }
+
+    @Override
+    public List<User> getUsers() {
+        return null;
+    }
 }

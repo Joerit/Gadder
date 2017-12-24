@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onClickFriends(View view){
-        OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents());
+        OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents(new User(0, "", "", "")));
         openFriendsActivity();
     }
 
