@@ -30,4 +30,34 @@ public class DummyRepository implements IRepository {
 
         return Events;
     }
+
+    @Override
+    public List<Event> getEvents(User user) {
+        return null;
+    }
+
+    @Override
+    public boolean addEvent(Event event) {
+        return false;
+    }
+
+    @Override
+    public List<User> getFriends(User user) {
+        return null;
+    }
+
+    @Override
+    public List<User> findUserByName(String name) {
+        return null;
+    }
+
+    @Override
+    public boolean addFriend(User user1, User user2) {
+        return false;
+    }
+
+    @Override
+    public List<Event> getInvitations(User user) {
+        return null;
+    }
 }

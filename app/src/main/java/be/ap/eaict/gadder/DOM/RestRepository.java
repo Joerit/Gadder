@@ -27,7 +27,7 @@ public class RestRepository implements IRepository {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                U
+
                 // All your networking logic
                 // should be here
             }
