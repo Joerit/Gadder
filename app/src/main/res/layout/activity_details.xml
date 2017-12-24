@@ -3,35 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_gravity="center"
     android:layout_height="match_parent"
     tools:context="be.ap.eaict.gadder.DetailsActivity">
 
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="68dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        android:layout_alignParentBottom="true">
 
-        <com.sothree.slidinguppanel.SlidingUpPanelLayout
-            xmlns:sothree="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/sliding_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            sothree:umanoPanelHeight="68dp"
-            sothree:umanoShadowHeight="4dp">
-        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="8dp">
 
 
@@ -53,33 +36,42 @@
             android:id="@+id/txtPlace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PLACE"
-            android:gravity="center_horizontal"
             android:layout_alignParentTop="true"
-            android:textSize="17pt"/>
+            android:gravity="center_horizontal"
+            android:text="PLACE"
+            android:textSize="17pt" />
 
         <TextView
             android:id="@+id/txtDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DATE"
-            android:gravity="center_horizontal"
             android:layout_alignParentTop="true"
-            android:textSize="17pt"/>
+            android:gravity="center_horizontal"
+            android:text="DATE"
+            android:textSize="17pt" />
 
         <TextView
             android:id="@+id/txtDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DESCRIPTION"
-            android:gravity="center_horizontal"
             android:layout_alignParentTop="true"
-            android:textSize="17pt"/>
-
-
+            android:gravity="center_horizontal"
+            android:text="DESCRIPTION"
+            android:textSize="17pt" />
 
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_filled"
+        android:layout_width="fill_parent"
+        android:layout_height="333dp"
+        android:layout_alignParentBottom="true"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="239dp">
+
+
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>

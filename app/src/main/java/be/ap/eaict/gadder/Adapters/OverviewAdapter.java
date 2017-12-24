@@ -1,4 +1,4 @@
-package be.ap.eaict.gadder;
+package be.ap.eaict.gadder.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,11 +16,11 @@ import be.ap.eaict.gadder.R;
  * Created by Kevin-Laptop on 20/12/2017.
  */
 
-public class MyAdapter extends ArrayAdapter<Event> {
+public class OverviewAdapter extends ArrayAdapter<Event> {
     private final Context context;
     private final List<Event> values;
 
-    public MyAdapter(Context context, List<Event> values) {
+    public OverviewAdapter(Context context, List<Event> values) {
         super(context, -1, values);
         this.context = context;
         this.values = values;
@@ -29,7 +29,7 @@ public class MyAdapter extends ArrayAdapter<Event> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.customlayout, parent, false);
+        View rowView = inflater.inflate(R.layout.customoverviewlayout, parent, false);
 
         //Insert data
         TextView txtNaam = (TextView)rowView.findViewById(R.id.txtNaam);

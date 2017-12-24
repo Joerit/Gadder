@@ -22,4 +22,7 @@ public interface IRepository {
 
     // returns all events with open invitation for user
     List<Event> getInvitations(User user);
+    
+    // return all users (do we need this?)
+    List<User> getUsers();
 }

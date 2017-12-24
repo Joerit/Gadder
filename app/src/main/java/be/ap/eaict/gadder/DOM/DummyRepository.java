@@ -18,7 +18,7 @@ public class DummyRepository implements IRepository {
         return repo;
     }
 
-    public List<Event> getEvents(){
+    public List<Event> getEvents(User user){
         List<Event> Events = new ArrayList<>();
 
         //DUMMY DATA TOEVOEGEN
@@ -29,11 +29,6 @@ public class DummyRepository implements IRepository {
 
 
         return Events;
-    }
-
-    @Override
-    public List<Event> getEvents(User user) {
-        return null;
     }
 
     @Override
@@ -59,5 +54,18 @@ public class DummyRepository implements IRepository {
     @Override
     public List<Event> getInvitations(User user) {
         return null;
+
+    public List<User> getUsers(){
+        List<User> Users = new ArrayList<>();
+
+        //DUMMY DATA TOEVOEGEN
+        Users.add(new User(0, "Scazi", "kevin-davis@hotmail.com", "kevin123"));
+        Users.add(new User(1, "Ratboy", "joeri.temmerman@hotmail.com", "joeri123"));
+        Users.add(new User(2, "Beckerich", "ruben.nemes@msn.com", "ruben123"));
+
+        //
+
+
+        return Users;
     }
 }
