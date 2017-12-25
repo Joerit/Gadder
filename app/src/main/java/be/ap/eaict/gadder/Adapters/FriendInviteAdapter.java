@@ -32,7 +32,7 @@ public class FriendInviteAdapter extends ArrayAdapter<User> {
         View rowView = inflater.inflate(R.layout.customfriendinviteslayout, parent, false);
 
         //Insert data
-        TextView txtFriendName = (TextView)rowView.findViewById(R.id.txtFriendName);
+        TextView txtFriendName = (TextView)rowView.findViewById(R.id.txtFriendInviteName);
         txtFriendName.setText(values.get(position).getUsername());
 
         //Filter on invites

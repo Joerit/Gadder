@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openFriendsActivity() {
-        Intent intent = new Intent(HomeActivity.this, FriendslistActivity.class);
+        Intent intent = new Intent(HomeActivity.this, FriendlistActivity.class);
 
         //INPUT DATA
 
