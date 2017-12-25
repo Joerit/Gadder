@@ -19,7 +19,6 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".CreateActivity" />
-        <activity android:name=".FriendslistActivity" />
         <activity android:name=".SettingsActivity" />
         <activity
             android:name=".FriendlistActivity"

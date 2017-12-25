@@ -24,13 +24,13 @@
 
         <Button
             android:id="@+id/btnDeleteFriend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignBaseline="@+id/txtFriendName"
             android:layout_alignBottom="@+id/txtFriendName"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/roundbutton"
+            android:background="@drawable/roundredbutton"
             android:text="X" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
