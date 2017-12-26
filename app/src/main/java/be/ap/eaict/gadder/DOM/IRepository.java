@@ -1,5 +1,6 @@
 package be.ap.eaict.gadder.DOM;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,21 +9,34 @@ import java.util.List;
 
 public interface IRepository {
 
-    // return all events of  user
-    List<Event> getEvents(User user);
-    // push created event to the server, returns true = success, false = failure
-    boolean addEvent(Event event);
+    IRepository getInstance();
 
-    // returns all friends of user
-    List<User> getFriends(User user);
-    // returns list of all users who match name
-    List<User> findUserByName(String name);
-    // push friendship between users to server
-    boolean addFriend(User user1, User user2);
+    //region GETTERS
+    List<Event> getEvents();
 
-    // returns all events with open invitation for user
-    List<Event> getInvitations(User user);
-    
-    // return all users (do we need this?)
     List<User> getUsers();
+
+    //Places
+    List<Place> getPlaces();
+
+    //UsersPerEvent
+    List<UsersPerEvent> getUsersPerEvents();
+
+    //FriendsPerUser
+    List<FriendsPerUser> getFriendsPerUsers();
+
+    //EventdatePerUser
+    List<EventdatePerUser> getEventdatePerUsers();
+
+    //endregion
+
+    //region SETTERS
+
+    void createUser(User user);
+    void updateUser(User user);
+
+    void createEvent(Event event);
+    void updateEvent(Event event);
+
+    //endregion
 }

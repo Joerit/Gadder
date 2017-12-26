@@ -30,7 +30,7 @@
             android:layout_alignBaseline="@+id/txtFriendInviteName"
             android:layout_alignBottom="@+id/btnDeclineInvite"
             android:layout_toStartOf="@+id/btnDeclineInvite"
-            android:background="@drawable/roundbutton"
+            android:background="@drawable/roundgreenbutton"
             android:text="V"
             android:layout_marginRight="5pt"/>
 
@@ -41,7 +41,7 @@
             android:layout_alignBaseline="@+id/txtFriendInviteName"
             android:layout_alignBottom="@+id/txtFriendInviteName"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/roundbutton"
+            android:background="@drawable/roundredbutton"
             android:text="X"
             android:layout_marginRight="5pt"/>
     </RelativeLayout>

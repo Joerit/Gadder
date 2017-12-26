@@ -40,9 +40,23 @@ public class HomeActivity extends AppCompatActivity {
         );
     }
 
+    public void onClickCreate(View view){
+        openCreateActivity();
+    }
+
     public void onClickFriends(View view){
         OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents(new User(0, "", "", "")));
         openFriendsActivity();
+    }
+
+    public void openCreateActivity(){
+        Intent intent = new Intent(HomeActivity.this, CreateActivity.class);
+
+        //INPUT DATA
+
+        //
+
+        startActivity(intent);
     }
 
     public void openDetailsActivity(Event event) {
@@ -56,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openFriendsActivity() {
-        Intent intent = new Intent(HomeActivity.this, FriendslistActivity.class);
+        Intent intent = new Intent(HomeActivity.this, FriendlistActivity.class);
 
         //INPUT DATA
 
