@@ -12,7 +12,7 @@ public class DummyRepository implements IRepository {
 
     private static IRepository repo = null;
 
-    public static IRepository getInstance() {
+    public IRepository getInstance() {
         if (repo == null) {
             repo = new DummyRepository();
         }
@@ -88,10 +88,26 @@ public class DummyRepository implements IRepository {
 
     //region SETTERS
 
-    public void insertUser(User user){
-
+    @Override
+    public void createUser(User user){
 
     }
+
+    @Override
+    public void updateUser(User user){
+
+    }
+
+    @Override
+    public void updateEvent(Event event){
+
+    }
+    @Override
+    public void createEvent(Event event) {
+
+    }
+
+
 
     //endregion
 }
