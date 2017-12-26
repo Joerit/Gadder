@@ -14,24 +14,17 @@ public class RestRepository implements IRepository {
     private URL serveraddress;
 
     RestRepository(){
-        try {
-            serveraddress = new URL("http://brabo.ddns.net/");
-        }
-        catch (MalformedURLException e){
-            throw new RuntimeException("the internet is broken");
-        }
+        String serverurl = "http://brabo.ddns.net:2102/gadderapi/";
     }
 
     @Override
     public List<Event> getEvents(User user) {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-
-                // All your networking logic
-                // should be here
-            }
-        });
+        try {
+            serveraddress = new URL( serveraddress + "");
+        }
+        catch (MalformedURLException e){
+            throw new RuntimeException("the internet is broken");
+        }
 
         return null;
     }
