@@ -12,7 +12,7 @@ public class DummyRepository implements IRepository {
 
     private static IRepository repo = null;
 
-    public IRepository getInstance() {
+    public static IRepository getInstance() {
         if (repo == null) {
             repo = new DummyRepository();
         }

@@ -7,7 +7,34 @@
     android:layout_height="match_parent"
     tools:context="be.ap.eaict.gadder.DetailsActivity">
 
+    <RelativeLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="230dp">
 
+
+        <Button
+            android:id="@+id/btnEditEvent"
+            android:layout_width="20pt"
+            android:layout_height="20pt"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/roundwhitebutton"
+            android:onClick="onClickEdit"
+            android:text="E" />
+
+        <Button
+            android:id="@+id/btnRemoveEvent"
+            android:layout_width="20pt"
+            android:layout_height="20pt"
+            android:layout_alignBottom="@+id/btnEditEvent"
+            android:layout_toStartOf="@+id/btnEditEvent"
+            android:background="@drawable/roundwhitebutton"
+            android:text="R"
+            android:layout_marginRight="5dp"/>
+    </RelativeLayout>
 
 
     <LinearLayout
@@ -15,7 +42,7 @@
         android:layout_height="230dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="9dp">
 
 
         <TextView
@@ -23,7 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="NAME" />
+            android:text="NAME"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/txtCreator"
@@ -31,15 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:text="CREATED BY ..." />
-
-        <TextView
-            android:id="@+id/txtPlace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:gravity="center_horizontal"
-            android:text="PLACE"
-            android:textSize="17pt" />
 
         <TextView
             android:id="@+id/txtDate"
@@ -59,6 +78,16 @@
             android:text="DESCRIPTION"
             android:textSize="17pt" />
 
+        <TextView
+            android:id="@+id/txtPlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal"
+            android:text="PLACE"
+            android:textSize="17pt" />
+
 
     </LinearLayout>
 
@@ -69,6 +98,7 @@
         android:layout_alignParentBottom="true"
         tools:layout_editor_absoluteX="54dp"
         tools:layout_editor_absoluteY="239dp">
+
 
 
     </RelativeLayout>

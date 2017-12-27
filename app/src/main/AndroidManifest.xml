@@ -23,7 +23,8 @@
         <activity
             android:name=".FriendlistActivity"
             android:label="@string/title_activity_friendlist"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".EditActivity"></activity>
     </application>
 
 </manifest>

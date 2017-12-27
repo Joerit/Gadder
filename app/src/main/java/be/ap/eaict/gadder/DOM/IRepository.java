@@ -9,7 +9,6 @@ import java.util.List;
 
 public interface IRepository {
 
-    IRepository getInstance();
 
 
     //region GETTERS
