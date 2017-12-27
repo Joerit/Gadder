@@ -51,7 +51,8 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/edittextborder"
             android:ems="10"
-            android:hint="Username" />
+            android:hint="Username"
+            android:paddingStart="5pt"/>
 
 
         <EditText
@@ -65,7 +66,8 @@
             android:background="@drawable/edittextborder"
             android:ems="10"
             android:hint="E-mail"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:paddingStart="5pt"/>
 
 
         <EditText
@@ -79,7 +81,8 @@
             android:background="@drawable/edittextborder"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:paddingStart="5pt"/>
 
 
         <EditText
@@ -93,7 +96,8 @@
             android:background="@drawable/edittextborder"
             android:ems="10"
             android:hint="Repeat Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:paddingStart="5pt"/>
 
         <Button
             android:id="@+id/btnRegister"
