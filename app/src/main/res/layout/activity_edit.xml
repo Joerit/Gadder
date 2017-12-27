@@ -124,7 +124,9 @@
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:text="Save" />
+            android:text="Save"
+            android:background="@drawable/styledbuttons"
+            android:textColor="@drawable/buttoncolorwhite"/>
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

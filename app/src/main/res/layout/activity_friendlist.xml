@@ -58,7 +58,9 @@
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:text="Add friend" />
+            android:text="Add friend"
+            android:background="@drawable/styledbuttons"
+            android:textColor="@drawable/buttoncolorwhite" />
 
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

@@ -25,7 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedbutton"
+                android:background="@drawable/styledbuttons"
+                android:textColor="@drawable/buttoncolorwhite"
                 android:onClick="onClickFriends"
                 android:text="Friends" />
 
@@ -34,7 +35,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundedbutton"
+                android:background="@drawable/styledbuttons"
+                android:textColor="@drawable/buttoncolorwhite"
                 android:onClick="onClickCreate"
                 android:text="Create" />
         </LinearLayout>

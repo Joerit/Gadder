@@ -19,8 +19,8 @@
             android:layout_height="100pt"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
-            android:src="@drawable/logo"/>
+            android:layout_marginTop="18dp"
+            android:src="@drawable/logo" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -28,7 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/imageLogo"
             android:layout_below="@+id/imageLogo"
+            android:layout_marginTop="35dp"
             android:ems="10"
+            android:hint="Username or E-mail"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -39,7 +41,8 @@
             android:layout_below="@+id/txtEmail"
             android:layout_marginTop="16dp"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="Password"
+            android:inputType="textAutoCorrect|textPassword" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -47,9 +50,11 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/txtPassword"
             android:layout_below="@+id/txtPassword"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="35dp"
             android:onClick="onClick"
-            android:text="Login" />
+            android:text="Login"
+            android:background="@drawable/styledbuttons"
+            android:textColor="@drawable/buttoncolorwhite"/>
 
         <Button
             android:id="@+id/btnRegister"
@@ -57,8 +62,11 @@
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/btnLogin"
             android:layout_below="@+id/btnLogin"
-            android:layout_marginTop="11dp"
-            android:text="Register" />
+            android:layout_marginTop="15dp"
+            android:onClick="onClickRegister"
+            android:text="Register"
+            android:background="@drawable/styledbuttons"
+            android:textColor="@drawable/buttoncolorwhite"/>
 
         <TextView
             android:id="@+id/txtUserTerms"
@@ -66,7 +74,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/btnRegister"
-            android:layout_marginBottom="11dp"
-            android:text="User Terms" />
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/btnRegister"
+            android:text="User Terms"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            android:text="slogan" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
