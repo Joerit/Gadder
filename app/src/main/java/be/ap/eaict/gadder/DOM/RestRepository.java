@@ -21,7 +21,87 @@ import java.util.List;
 
 public class RestRepository implements IRepository {
     private RestRepository repo;
-    String serverUrl;
+    private String serverUrl;
+
+    private class getEventsTask extends AsyncTask<Integer, Void, Void>{
+        boolean done;
+        List<Event> reply;
+        @Override
+        protected Void doInBackground(Integer... inputs) {
+            done = false;
+            List<Event> reply = new ArrayList<Event>();
+            try {
+                URL serveradress = new URL( serverUrl + "getEvents.php");
+
+                HttpURLConnection c = (HttpURLConnection) serveradress.openConnection();
+
+                if(c.getResponseCode() == 200){
+                    JSONArray JsArr = new JSONArray(new InputStreamReader(c.getInputStream(), "UTF-8"));
+                    for (int i = 0; i < JsArr.length(); i++) {
+                        reply.add(new Event(JsArr.getJSONObject(i)));
+                    }
+                    done = true;
+                    return null;
+                }
+                else{
+                    //panick
+                }
+                done = true;
+                return null;
+            }
+            catch (MalformedURLException e){
+                throw new RuntimeException("the internet is broken");
+            }
+            catch (IOException e){
+                // do absolutely nothing
+            }
+            catch (JSONException e){
+                // think of the children
+            }
+            done = true;
+            return null;
+        }
+    }
+
+    private class getUsersTask extends AsyncTask<Integer, Void, Void>{
+        boolean done;
+        List<User> reply;
+        @Override
+        protected Void doInBackground(Integer... inputs) {
+            done = false;
+            List<User> reply = new ArrayList<User>();
+            try {
+                URL serveradress = new URL( serverUrl + "getUsers.php");
+
+                HttpURLConnection c = (HttpURLConnection) serveradress.openConnection();
+
+                if(c.getResponseCode() == 200){
+                    JSONArray JsArr = new JSONArray(new InputStreamReader(c.getInputStream(), "UTF-8"));
+                    for (int i = 0; i < JsArr.length(); i++) {
+                        reply.add(new User(JsArr.getJSONObject(i)));
+                    }
+                    done = true;
+                    return null;
+                }
+                else{
+                    //panick
+                }
+                done = true;
+                return null;
+            }
+            catch (MalformedURLException e){
+                throw new RuntimeException("the internet is broken");
+            }
+            catch (IOException e){
+                // do absolutely nothing
+            }
+            catch (JSONException e){
+                // think of the children
+            }
+            done = true;
+            return null;
+        }
+    }
 
     RestRepository(){
         serverUrl = "http://brabo.ddns.net:2102/gadderapi/";
@@ -37,40 +117,24 @@ public class RestRepository implements IRepository {
 
     @Override
     public List<Event> getEvents() {
-        URL serveradress;
-        List<Event> ret = new ArrayList<Event>();
-        try {
-            serveradress = new URL( serverUrl + "getEvents.php");
-
-            HttpURLConnection c = (HttpURLConnection) serveradress.openConnection();
-
-            if(c.getResponseCode() == 200){
-                JSONArray JsArr = new JSONArray(new InputStreamReader(c.getInputStream(), "UTF-8"));
-                for (int i = 0; i < JsArr.length(); i++){
-                    ret.add(new Event(JsArr.getJSONObject(i)));
-                }
-                return ret;
-            }
-            else{
-                //panick
-            }
-            return null;
+        getEventsTask task = new getEventsTask();
+        task.execute(1);
+        while (!task.done){
+            // wait?
+            // show "loading"?
         }
-        catch (MalformedURLException e){
-            throw new RuntimeException("the internet is broken");
-        }
-        catch (IOException e){
-            // do absolutely nothing
-        }
-        catch (JSONException e){
-            // think of the children
-        }
-        return null;
+        return task.reply;
     }
 
     @Override
     public List<User> getUsers() {
-        return null;
+        getUsersTask task = new getUsersTask();
+        task.execute(1);
+        while (!task.done){
+            // wait?
+            // show "loading"?
+        }
+        return task.reply;
     }
 
     @Override

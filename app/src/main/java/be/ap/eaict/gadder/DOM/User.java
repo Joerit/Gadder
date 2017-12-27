@@ -1,5 +1,10 @@
 package be.ap.eaict.gadder.DOM;
 
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by Kevin-Laptop on 20/12/2017.
  */
@@ -17,6 +22,18 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public User(JSONObject JsObj){
+        try {
+            this.id = JsObj.getInt("id");
+            this.username = JsObj.getString("name");
+            this.email = JsObj.getString("email");
+            this.password = JsObj.getString("pass");
+        }
+        catch(JSONException e){
+            Log.e("USER", "JSONEXCEPTION");
+        }
     }
 
     public int getId(){

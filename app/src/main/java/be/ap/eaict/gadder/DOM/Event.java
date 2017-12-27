@@ -1,5 +1,7 @@
 package be.ap.eaict.gadder.DOM;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -56,7 +58,7 @@ public class Event {
             this.endYear = JsObj.getInt("eyear");
         }
         catch (JSONException e){
-            //something
+            Log.e("EVENT", "JSONEXCEPTION");
         }
     }
 
