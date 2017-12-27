@@ -1,5 +1,8 @@
 package be.ap.eaict.gadder.DOM;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Calendar;
 
 /**
@@ -36,6 +39,25 @@ public class Event {
         this.endDay = endDay;
         this.endMonth = endMonth;
         this.endYear = endYear;
+    }
+
+    public Event(JSONObject JsObj){
+        try {
+            this.id = JsObj.getInt("id");
+            this.name = JsObj.getString("name");
+            this.place = JsObj.getString("place");
+            this.description = JsObj.getString("description");
+            this.creator = JsObj.getInt("creator");
+            this.startDay = JsObj.getInt("sday");
+            this.startMonth = JsObj.getInt("smonth");
+            this.startYear = JsObj.getInt("syear");
+            this.endDay = JsObj.getInt("eday");
+            this.endMonth = JsObj.getInt("emonth");
+            this.endYear = JsObj.getInt("eyear");
+        }
+        catch (JSONException e){
+            //something
+        }
     }
 
     public int getId() {
