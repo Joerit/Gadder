@@ -132,6 +132,7 @@ public class Event {
         this.endYear = endYear;
     }
 
+
     public List<Tuple<Integer, InviteState>> getInvitedUsers(){
         return invitedUsers;
     }
@@ -140,7 +141,16 @@ public class Event {
         invitedUsers.add(invite);
     }
 
-    public void setInvitedUser(List<Tuple<Integer, InviteState>> invitedUsers){
+    public void setInvitedUser(List<Tuple<Integer, InviteState>> invitedUsers) {
         this.invitedUsers = invitedUsers;
+    }
+
+    public String getStartDate(){
+        return this.startDay + "/" + this.startMonth + "/" + this.startYear;
+    }
+
+    public String getEndDate(){
+        return this.endDay +"/" + this.endMonth + "/" + this.endYear;
+
     }
 }

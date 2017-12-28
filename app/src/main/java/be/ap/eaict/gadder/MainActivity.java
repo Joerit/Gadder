@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public void openActivity(){
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void onClickRegister(View view){
