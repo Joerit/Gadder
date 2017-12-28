@@ -19,7 +19,6 @@ public class Event {
     private int endDay;
     private int endMonth;
     private int endYear;
-    private ArrayList<Tuple<int, boolean>>
 
     public Event(){
 

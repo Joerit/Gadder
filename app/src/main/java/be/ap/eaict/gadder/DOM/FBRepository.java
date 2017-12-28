@@ -35,11 +35,11 @@ public class FBRepository implements IRepository {
     public FBRepository(){
         FirebaseDatabase fbdb = FirebaseDatabase.getInstance();
 
-        DatabaseReference ref = fbdb.getReference("events");
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference eventRef = fbdb.getReference("events");
+        eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<Event> reply = new ArrayList<Event>();
+                ArrayList<Event> reply = new ArrayList<>();
                 for (DataSnapshot event :dataSnapshot.getChildren()){
                     reply.add(event.getValue(Event.class));
                 }
@@ -51,18 +51,56 @@ public class FBRepository implements IRepository {
 
             }
         });
+
+        DatabaseReference userRef = fbdb.getReference("users");
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<User> reply = new ArrayList<>();
+                for (DataSnapshot user :dataSnapshot.getChildren()){
+                    reply.add(user.getValue(User.class));
+                }
+                FBRepository.getInstance().updateUserCache(reply);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
     @Override
-    public List<Event> getEvents() {
+    public List<Event> getEvents(){
         return eventCache;
     }
 
     @Override
-    public List<Event> getEvents(List<int>)
+    public List<Event> getEvents(List<Integer> idList) {
+        ArrayList<Event> retList = new ArrayList<>();
+        for(Event event: eventCache){
+            if(idList.contains(event.getId())){
+                retList.add(event);
+            }
+        }
+        return retList;
+    }
 
     @Override
     public List<User> getUsers() {
         return userCache;
+    }
+
+    @Override
+    public List<User> getUsers(List<Integer> idList) {
+        ArrayList<User> retList = new ArrayList<>();
+        for(User user: userCache){
+            if(idList.contains(user.getId())){
+                retList.add(user);
+            }
+        }
+        return retList;
     }
 
     @Override
