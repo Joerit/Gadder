@@ -22,6 +22,8 @@ import java.util.ListIterator;
 public class FBRepository implements IRepository {
     private static FBRepository repo = null;
     private List<Event> eventCache;
+    private List<User> userCache;
+
 
     public static FBRepository getInstance() {
         if (repo == null) {
@@ -32,25 +34,7 @@ public class FBRepository implements IRepository {
 
     public FBRepository(){
         FirebaseDatabase fbdb = FirebaseDatabase.getInstance();
-        List<Event> events = new ArrayList<>();
 
-        //Events
-        events.add(new Event(0, "Stuff", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(1, "Things", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(2, "firebaserepo", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(3, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(4, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(5, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(6, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(7, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(8, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(9, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(10, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(11, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(12, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
-        events.add(new Event(13, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-
-        fbdb.getReference("events").setValue(events);
         DatabaseReference ref = fbdb.getReference("events");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -74,8 +58,11 @@ public class FBRepository implements IRepository {
     }
 
     @Override
+    public List<Event> getEvents(List<int>)
+
+    @Override
     public List<User> getUsers() {
-        return null;
+        return userCache;
     }
 
     @Override
@@ -121,6 +108,10 @@ public class FBRepository implements IRepository {
     //
     public void updateEventCache(List<Event> eList){
         eventCache = eList;
+    }
+
+    public void updateUserCache(List<User> uList) {
+        userCache = uList;
     }
 
 }
