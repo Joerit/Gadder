@@ -46,7 +46,7 @@ public class CreateActivity extends AppCompatActivity {
         mDateListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                Log.d(TAG,"onDateSet: date: " + dayOfMonth + "-" + month + "-" + year);
+                dateFrom.setText(dayOfMonth + "-" + month + "-" + year);
             }
         };
     }
