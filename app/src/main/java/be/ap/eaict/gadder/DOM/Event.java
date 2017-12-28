@@ -126,4 +126,12 @@ public class Event {
     public void setEndYear(int endYear) {
         this.endYear = endYear;
     }
+
+    public String getStartDate(){
+        return this.startDay + "/" + this.startMonth + "/" + this.startYear;
+    }
+
+    public String getEndDate(){
+        return this.endDay +"/" + this.endMonth + "/" + this.endYear;
+    }
 }
