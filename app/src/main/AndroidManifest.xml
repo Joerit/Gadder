@@ -25,7 +25,6 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".CreateActivity" />
-        <activity android:name=".SettingsActivity" />
         <activity
             android:name=".FriendlistActivity"
             android:label="@string/title_activity_friendlist"

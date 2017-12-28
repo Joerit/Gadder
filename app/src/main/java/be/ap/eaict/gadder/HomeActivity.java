@@ -48,6 +48,21 @@ public class HomeActivity extends AppCompatActivity {
         openFriendsActivity();
     }
 
+    public void onClickLogout(View view){
+        logout();
+    }
+
+    public void logout(){
+        Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+
+        //INPUT DATA
+
+        //
+
+        startActivity(intent);
+        finish();
+    }
+
     public void openCreateActivity(){
         Intent intent = new Intent(HomeActivity.this, CreateActivity.class);
 
