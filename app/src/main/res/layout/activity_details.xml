@@ -21,7 +21,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/roundwhitebutton"
+            android:background="@drawable/roundwhitebuttonwborder"
             android:onClick="onClickEdit"
             android:text="E" />
 
@@ -31,7 +31,7 @@
             android:layout_height="20pt"
             android:layout_alignBottom="@+id/btnEditEvent"
             android:layout_toStartOf="@+id/btnEditEvent"
-            android:background="@drawable/roundwhitebutton"
+            android:background="@drawable/roundwhitebuttonwborder"
             android:text="R"
             android:layout_marginRight="5dp"/>
     </RelativeLayout>
