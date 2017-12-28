@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents());
+        OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
         openActivity();
     }
 

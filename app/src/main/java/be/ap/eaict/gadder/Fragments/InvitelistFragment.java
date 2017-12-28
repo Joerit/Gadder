@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import be.ap.eaict.gadder.Adapters.FriendInviteAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
+import be.ap.eaict.gadder.DOM.FBRepository;
 import be.ap.eaict.gadder.R;
 
 /**
@@ -31,7 +32,7 @@ public class InvitelistFragment extends Fragment{
 
         inviteList = (ListView) view.findViewById(R.id.invitelist);
 
-        FriendInviteAdapter friendInviteAdapter = new FriendInviteAdapter(this.getActivity(), DummyRepository.getInstance().getUsers());
+        FriendInviteAdapter friendInviteAdapter = new FriendInviteAdapter(this.getActivity(), FBRepository.getInstance().getUsers());
         inviteList.setAdapter(friendInviteAdapter);
 
         return view;

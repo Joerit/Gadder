@@ -18,6 +18,7 @@ import java.util.List;
 
 import be.ap.eaict.gadder.Adapters.FriendslistAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
+import be.ap.eaict.gadder.DOM.FBRepository;
 import be.ap.eaict.gadder.DOM.User;
 import be.ap.eaict.gadder.R;
 
@@ -38,7 +39,7 @@ public class FriendlistFragment extends Fragment{
 
         friendList = (ListView) view.findViewById(R.id.friendlist);
 
-        FriendslistAdapter friendslistAdapter = new FriendslistAdapter(this.getActivity(), DummyRepository.getInstance().getUsers());
+        FriendslistAdapter friendslistAdapter = new FriendslistAdapter(this.getActivity(), FBRepository.getInstance().getUsers());
         friendList.setAdapter(friendslistAdapter);
 
         return view;

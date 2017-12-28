@@ -35,6 +35,7 @@ public class FBRepository implements IRepository {
     public FBRepository(){
         FirebaseDatabase fbdb = FirebaseDatabase.getInstance();
 
+
         DatabaseReference eventRef = fbdb.getReference("events");
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -53,6 +54,7 @@ public class FBRepository implements IRepository {
         });
 
         DatabaseReference userRef = fbdb.getReference("users");
+
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
