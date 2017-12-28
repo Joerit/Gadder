@@ -12,6 +12,7 @@ import java.util.List;
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.Event;
+import be.ap.eaict.gadder.DOM.FBRepository;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -22,11 +23,11 @@ public class HomeActivity extends AppCompatActivity {
 
         final ListView eventsList = (ListView) findViewById(R.id.listViewEvents);
 
-        OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents());
+        OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
         eventsList.setAdapter(overviewAdapter);
 
         final List<Event> values;
-        values = DummyRepository.getInstance().getEvents();
+        values = FBRepository.getInstance().getEvents();
 
 
         eventsList.setOnItemClickListener(
@@ -44,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onClickFriends(View view){
-        OverviewAdapter overviewAdapter = new OverviewAdapter(this, DummyRepository.getInstance().getEvents());
+        OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
         openFriendsActivity();
     }
 

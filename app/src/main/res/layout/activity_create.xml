@@ -110,11 +110,14 @@
 
         <EditText
             android:id="@+id/txtDateTill"
+            android:clickable="true"
+            android:inputType="none"
+            android:focusable="false"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView12"
             android:ems="10"
-            android:inputType="date"
+
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:maxLength="10"/>
