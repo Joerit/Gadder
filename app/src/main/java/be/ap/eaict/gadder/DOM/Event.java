@@ -2,10 +2,12 @@ package be.ap.eaict.gadder.DOM;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Kevin-Laptop on 20/12/2017.
  */
+
 public class Event {
 
     private int id;
@@ -19,6 +21,7 @@ public class Event {
     private int endDay;
     private int endMonth;
     private int endYear;
+    private List<Tuple<Integer, InviteState>> invitedUsers;
 
     public Event(){
 
@@ -37,6 +40,8 @@ public class Event {
         this.endDay = endDay;
         this.endMonth = endMonth;
         this.endYear = endYear;
+        this.invitedUsers = new ArrayList<>();
+        this.invitedUsers.add(new Tuple<Integer, InviteState>(creator, InviteState.Accepted));
     }
 
     public int getId() {
@@ -127,11 +132,25 @@ public class Event {
         this.endYear = endYear;
     }
 
+
+    public List<Tuple<Integer, InviteState>> getInvitedUsers(){
+        return invitedUsers;
+    }
+
+    public void addInvitedUser(Tuple<Integer, InviteState> invite){
+        invitedUsers.add(invite);
+    }
+
+    public void setInvitedUser(List<Tuple<Integer, InviteState>> invitedUsers) {
+        this.invitedUsers = invitedUsers;
+    }
+
     public String getStartDate(){
         return this.startDay + "/" + this.startMonth + "/" + this.startYear;
     }
 
     public String getEndDate(){
         return this.endDay +"/" + this.endMonth + "/" + this.endYear;
+
     }
 }
