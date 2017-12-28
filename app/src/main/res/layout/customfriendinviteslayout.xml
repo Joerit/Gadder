@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="8">
 
         <TextView
             android:id="@+id/txtFriendInviteName"
@@ -19,30 +19,56 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="28dp"
             android:text="TextView"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:layout_weight="6"
+            android:layout_gravity="center_vertical"
+            />
 
-        <Button
+
+        <ImageButton
             android:id="@+id/btnAcceptInvite"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignBaseline="@+id/txtFriendInviteName"
-            android:layout_alignBottom="@+id/btnDeclineInvite"
+            android:layout_width="10dp"
+            android:layout_height="15pt"
+            android:layout_alignTop="@+id/btnDeclineInvite"
+            android:layout_gravity="center"
             android:layout_toStartOf="@+id/btnDeclineInvite"
-            android:background="@drawable/roundgreenbutton"
-            android:text="V"
-            android:layout_marginRight="5pt"/>
+            android:layout_weight="1"
+            android:background="@drawable/roundwhitebutton"
+            android:focusable="false"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/checked" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnDeclineInvite"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignBaseline="@+id/txtFriendInviteName"
-            android:layout_alignBottom="@+id/txtFriendInviteName"
+            android:layout_width="10dp"
+            android:layout_height="15pt"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/roundredbutton"
-            android:text="X"
-            android:layout_marginRight="5pt"/>
+            android:layout_alignTop="@+id/txtFriendInviteName"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/roundwhitebutton"
+            android:focusable="false"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/delete" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
