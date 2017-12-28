@@ -12,7 +12,10 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.Event;
+import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.User;
 import be.ap.eaict.gadder.R;
 
 /**
@@ -22,6 +25,7 @@ import be.ap.eaict.gadder.R;
 public class OverviewAdapter extends ArrayAdapter<Event> {
     private final Context context;
     private final List<Event> values;
+    String strCreator;
 
     public OverviewAdapter(Context context, List<Event> values) {
         super(context, -1, values);
@@ -39,10 +43,23 @@ public class OverviewAdapter extends ArrayAdapter<Event> {
 
         TextView txtNaam = (TextView)rowView.findViewById(R.id.txtNaam);
         TextView txtDatum = (TextView) rowView.findViewById(R.id.txtDatum);
+        TextView txtInvitedOrCreator = (TextView) rowView.findViewById(R.id.txtInvitedOrCreator);
 
 
         txtNaam.setText(values.get(position).getName());
         txtDatum.setText(values.get(position).getStartDate());
+
+
+
+
+        for (User user: FBRepository.getInstance().getUsers()) {
+            if(user.getId() == values.get(position).getCreator()){
+                strCreator = user.getUsername();
+            }
+
+        }
+
+        txtInvitedOrCreator.setText(strCreator);
         //
 
         return rowView;

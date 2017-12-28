@@ -27,15 +27,15 @@ public class DummyRepository implements IRepository {
         //Events
         events.add(new Event(0, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(1, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(2, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
+        events.add(new Event(2, "Cinema", "Kinepolis", "Film kijken", 0, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(3, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
         events.add(new Event(4, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(5, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(6, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
+        events.add(new Event(6, "Cinema", "Kinepolis", "Film kijken", 2, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(7, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(8, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
+        events.add(new Event(8, "Cinema", "Kinepolis", "Film kijken", 0, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(9, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
-        events.add(new Event(10, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
+        events.add(new Event(10, "Cinema", "Kinepolis", "Film kijken", 2, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(11, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
         events.add(new Event(12, "Cinema", "Kinepolis", "Film kijken", 1, 2, 3, 2018, 5, 3, 2018 ));
         events.add(new Event(13, "Schaatsen", "Kerstmarkt", "Op uw gezicht gaan", 1, 2, 4, 2018, 5, 4, 2018 ));
