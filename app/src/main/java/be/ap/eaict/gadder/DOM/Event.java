@@ -20,8 +20,9 @@ public class Event {
     private int endMonth;
     private int endYear;
 
+    public Event(){
 
-
+    };
 
     public Event(int id, String name, String place, String description, int creator,
                  int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear){

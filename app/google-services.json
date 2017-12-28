@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "104258776525",
+    "firebase_url": "https://gadder-37e0c.firebaseio.com",
+    "project_id": "gadder-37e0c",
+    "storage_bucket": "gadder-37e0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104258776525:android:5d19162702948e06",
+        "android_client_info": {
+          "package_name": "be.ap.eaict.gadder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104258776525-u71q2rkekc50fv6ku35o6h4a6knnat97.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ev48BD_QzKTHpHNzTrT18UYNAtSPqb4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

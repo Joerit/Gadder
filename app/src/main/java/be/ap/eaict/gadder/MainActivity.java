@@ -7,6 +7,7 @@ import android.view.View;
 
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
+import be.ap.eaict.gadder.DOM.FBRepository;
 
 import static be.ap.eaict.gadder.R.layout.activity_main;
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(activity_main);
-
+        FBRepository.getInstance();
 
     }
 
