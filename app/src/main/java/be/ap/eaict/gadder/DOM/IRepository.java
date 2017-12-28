@@ -14,8 +14,11 @@ public interface IRepository {
     //region GETTERS
     List<Event> getEvents();
 
+    List<Event> getEvents(List<Integer> idList);
 
     List<User> getUsers();
+
+    List<User> getUsers(List<Integer> idList);
 
     //Places
     List<Place> getPlaces();

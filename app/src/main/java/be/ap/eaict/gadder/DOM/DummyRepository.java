@@ -44,6 +44,11 @@ public class DummyRepository implements IRepository {
         return events;
     }
 
+    @Override
+    public List<Event> getEvents(List<Integer> idList) {
+        return null;
+    }
+
 
     public List<User> getUsers(){
         List<User> users = new ArrayList<>();
@@ -54,6 +59,11 @@ public class DummyRepository implements IRepository {
         users.add(new User(2, "Beckerich", "ruben.nemes@msn.com", "ruben123"));
 
         return users;
+    }
+
+    @Override
+    public List<User> getUsers(List<Integer> idList) {
+        return null;
     }
 
     //Places

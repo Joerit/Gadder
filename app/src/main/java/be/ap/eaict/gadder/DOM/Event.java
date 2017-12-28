@@ -1,11 +1,11 @@
 package be.ap.eaict.gadder.DOM;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
  * Created by Kevin-Laptop on 20/12/2017.
  */
-
 public class Event {
 
     private int id;
@@ -20,8 +20,9 @@ public class Event {
     private int endMonth;
     private int endYear;
 
+    public Event(){
 
-
+    };
 
     public Event(int id, String name, String place, String description, int creator,
                  int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear){
