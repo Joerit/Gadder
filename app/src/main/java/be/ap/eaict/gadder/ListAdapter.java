@@ -18,7 +18,7 @@ public class ListAdapter extends ArrayAdapter<DatesAvailable> {
     private final Context context;
     private final List<DatesAvailable> values;
 
-    public MyAdapter(Context context, List<DatesAvailable> values) {
+    public ListAdapter(Context context, List<DatesAvailable> values) {
         super(context, -1, values);
         this.context = context;
         this.values = values;
