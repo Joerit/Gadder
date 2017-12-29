@@ -13,7 +13,7 @@
         android:layout_height="230dp">
 
 
-        <Button
+        <ImageButton
             android:id="@+id/btnEditEvent"
             android:layout_width="20pt"
             android:layout_height="20pt"
@@ -21,19 +21,29 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/roundwhitebuttonwborder"
+            android:background="@drawable/roundwhitebutton"
             android:onClick="onClickEdit"
-            android:text="E" />
+            android:src="@drawable/edit"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:scaleType="fitCenter"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btnRemoveEvent"
             android:layout_width="20pt"
             android:layout_height="20pt"
             android:layout_alignBottom="@+id/btnEditEvent"
             android:layout_toStartOf="@+id/btnEditEvent"
-            android:background="@drawable/roundwhitebuttonwborder"
-            android:text="R"
-            android:layout_marginRight="5dp"/>
+            android:background="@drawable/roundwhitebutton"
+            android:src="@drawable/remove"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:scaleType="fitCenter"/>
     </RelativeLayout>
 
 

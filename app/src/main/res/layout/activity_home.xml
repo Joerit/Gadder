@@ -61,7 +61,7 @@
                     android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:text="NEXT MEETING"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorPrimaryDark"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -91,7 +91,8 @@
                 android:gravity="center"
                 android:text="MY EVENTS"
                 android:textSize="30dp"
-                />
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF" />
 
             <ListView
             android:id="@+id/listViewEvents"

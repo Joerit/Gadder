@@ -16,8 +16,11 @@ public class UsersPerEvent {
         this.status = status;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getUserId(int eventId) {
+        if(this.eventId == eventId){
+            return userId;
+        }
+        return -1;
     }
 
     public void setUserId(int userId) {
