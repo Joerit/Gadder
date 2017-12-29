@@ -14,6 +14,7 @@ public class User {
     private String email;
     private String password;
     private List<Integer> invitedEvents;
+    private List<Tuple<Integer, InviteState>> friends;
 
     public User(){
         this.invitedEvents = new ArrayList<>();
@@ -65,6 +66,10 @@ public class User {
 
     public void setInvitedEvents(List<Integer> invitedEvents){
         this.invitedEvents = invitedEvents;
+    }
+
+    public void setFriends(List<Tuple<Integer, InviteState>> friends){
+        this.friends = friends;
     }
 
     public boolean equals(User other){

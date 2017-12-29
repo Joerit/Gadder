@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -19,6 +20,7 @@ public class CreateActivity extends AppCompatActivity {
     private EditText dateTo;
     private DatePickerDialog.OnDateSetListener fromDateListener;
     private DatePickerDialog.OnDateSetListener toDateListener;
+    private Button btnCreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,5 +80,15 @@ public class CreateActivity extends AppCompatActivity {
                 dateTo.setText(dayOfMonth + "-" + month + "-" + year);
             }
         };
+
+        btnCreate = (Button) findViewById(R.id.btnCreate);
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 }

@@ -34,25 +34,45 @@ public class FBRepository implements IRepository {
     }
 
     public FBRepository(){
+        eventCache = new HashMap<>();
+        userCache = new HashMap<>();
+
         FirebaseDatabase fbdb = FirebaseDatabase.getInstance();
 
-        DatabaseReference eventRef = fbdb.getReference("events");
+        // fill eventCache /////
+        final DatabaseReference eventRef = fbdb.getReference("events");
+        eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.d("FBREPO", "adding elements");
+                for(DataSnapshot snap: dataSnapshot.getChildren()){
+                    eventCache.put(new Integer(snap.getKey()), snap.getValue(Event.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        // add listener to update eventCache on change
         eventRef.addChildEventListener(new ChildEventListener(){
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevName) {
+                Log.d("FBREP", "in onChildAdded");
                 FBRepository.getInstance().eventCache.put(
-                        Integer.getInteger(dataSnapshot.getKey()),
+                        new Integer(dataSnapshot.getKey()),
                         dataSnapshot.getValue(Event.class));
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot){
-                FBRepository.getInstance().eventCache.remove(dataSnapshot.getKey());
+                FBRepository.getInstance().eventCache.remove(new Integer(dataSnapshot.getKey()));
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String prevName){
                 FBRepository.getInstance().eventCache.put(
-                        Integer.getInteger(dataSnapshot.getKey()),
+                        new Integer(dataSnapshot.getKey()),
                         dataSnapshot.getValue(Event.class));
             }
 
@@ -65,24 +85,38 @@ public class FBRepository implements IRepository {
             }
         });
 
+        // fill usercache
         DatabaseReference userRef = fbdb.getReference("users");
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot snap: dataSnapshot.getChildren()){
+                    userCache.put(new Integer(snap.getKey()), snap.getValue(User.class));
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        // add listener to update usercache on change
         userRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevName) {
                 FBRepository.getInstance().userCache.put(
-                        Integer.getInteger(dataSnapshot.getKey()),
+                        new Integer(dataSnapshot.getKey()),
                         dataSnapshot.getValue(User.class));
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                FBRepository.getInstance().userCache.remove(dataSnapshot.getKey());
+                FBRepository.getInstance().userCache.remove(new Integer(dataSnapshot.getKey()));
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String prevName) {
                 FBRepository.getInstance().userCache.put(
-                        Integer.getInteger(dataSnapshot.getKey()),
+                        new Integer(dataSnapshot.getKey()),
                         dataSnapshot.getValue(User.class));
             }
 
