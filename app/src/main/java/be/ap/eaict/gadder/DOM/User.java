@@ -66,4 +66,8 @@ public class User {
     public void setInvitedEvents(List<Integer> invitedEvents){
         this.invitedEvents = invitedEvents;
     }
+
+    public boolean equals(User other){
+        return this.id == other.getId();
+    }
 }

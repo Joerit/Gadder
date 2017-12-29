@@ -1,5 +1,6 @@
 package be.ap.eaict.gadder.DOM;
 
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
@@ -10,10 +11,8 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Created by joeri on 28/12/2017.
@@ -21,8 +20,8 @@ import java.util.ListIterator;
 
 public class FBRepository implements IRepository {
     private static FBRepository repo = null;
-    private List<Event> eventCache;
-    private List<User> userCache;
+    private HashMap<Integer, Event> eventCache;
+    private HashMap<Integer, User> userCache;
 
 
     public static FBRepository getInstance() {
@@ -35,14 +34,14 @@ public class FBRepository implements IRepository {
     public FBRepository(){
         FirebaseDatabase fbdb = FirebaseDatabase.getInstance();
 
-
         DatabaseReference eventRef = fbdb.getReference("events");
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<Event> reply = new ArrayList<>();
-                for (DataSnapshot event :dataSnapshot.getChildren()){
-                    reply.add(event.getValue(Event.class));
+                HashMap<Integer, Event> reply = new HashMap<>();
+                for (DataSnapshot snap :dataSnapshot.getChildren()){
+                    Event event = (Event)snap.getValue();
+                    reply.put(event.getId(), event);
                 }
                 FBRepository.getInstance().updateEventCache(reply);
             }
@@ -58,9 +57,10 @@ public class FBRepository implements IRepository {
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<User> reply = new ArrayList<>();
-                for (DataSnapshot user :dataSnapshot.getChildren()){
-                    reply.add(user.getValue(User.class));
+                HashMap<Integer, User> reply = new HashMap<>();
+                for (DataSnapshot snap :dataSnapshot.getChildren()){
+                    User user = (User)snap.getValue();
+                    reply.put(user.getId(), user);
                 }
                 FBRepository.getInstance().updateUserCache(reply);
             }
@@ -75,32 +75,28 @@ public class FBRepository implements IRepository {
     }
     @Override
     public List<Event> getEvents(){
-        return eventCache;
+        return new ArrayList<>(eventCache.values());
     }
 
     @Override
     public List<Event> getEvents(List<Integer> idList) {
         ArrayList<Event> retList = new ArrayList<>();
-        for(Event event: eventCache){
-            if(idList.contains(event.getId())){
-                retList.add(event);
-            }
+        for(Integer id: idList){
+            retList.add(eventCache.get(id));
         }
         return retList;
     }
 
     @Override
     public List<User> getUsers() {
-        return userCache;
+        return new ArrayList<>(userCache.values());
     }
 
     @Override
     public List<User> getUsers(List<Integer> idList) {
         ArrayList<User> retList = new ArrayList<>();
-        for(User user: userCache){
-            if(idList.contains(user.getId())){
-                retList.add(user);
-            }
+        for(Integer id: idList){
+            retList.add(userCache.get(id));
         }
         return retList;
     }
@@ -127,30 +123,45 @@ public class FBRepository implements IRepository {
 
     @Override
     public void createUser(User user) {
-
+        createOrUpdateUser(user);
     }
 
     @Override
     public void updateUser(User user) {
+        createOrUpdateUser(user);
+    }
+
+    @Override
+    public void createOrUpdateUser(User user) {
 
     }
 
     @Override
     public void createEvent(Event event) {
-
+        createOrUpdateEvent(event);
     }
 
     @Override
     public void updateEvent(Event event) {
+        createOrUpdateEvent(event);
+    }
 
+    @Override
+    public void createOrUpdateEvent(Event event) {
+        if(event.getId() == -1){
+            event.setId(eventCache.size());
+            eventCache.put(event.getId(), event);
+        }
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("events");
+        ref.child(Integer.toString(event.getId())).setValue(event);
     }
 
     //
-    public void updateEventCache(List<Event> eList){
+    public void updateEventCache(HashMap<Integer, Event> eList){
         eventCache = eList;
     }
 
-    public void updateUserCache(List<User> uList) {
+    public void updateUserCache(HashMap<Integer, User> uList) {
         userCache = uList;
     }
 

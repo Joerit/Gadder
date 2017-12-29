@@ -109,9 +109,20 @@ public class DummyRepository implements IRepository {
     }
 
     @Override
+    public void createOrUpdateUser(User user) {
+
+    }
+
+    @Override
     public void updateEvent(Event event){
 
     }
+
+    @Override
+    public void createOrUpdateEvent(Event event) {
+
+    }
+
     @Override
     public void createEvent(Event event) {
 

@@ -38,9 +38,11 @@ public interface IRepository {
 
     void createUser(User user);
     void updateUser(User user);
+    void createOrUpdateUser(User user);
 
     void createEvent(Event event);
     void updateEvent(Event event);
+    void createOrUpdateEvent(Event event);
 
     //endregion
 }
