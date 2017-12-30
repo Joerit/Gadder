@@ -131,11 +131,13 @@ public class FBRepository implements IRepository {
         });
     }
 
+    // get all events
     @Override
     public List<Event> getEvents(){
         return new ArrayList<>(eventCache.values());
     }
 
+    // get events by ID
     @Override
     public List<Event> getEvents(List<Integer> idList) {
         ArrayList<Event> retList = new ArrayList<>();
@@ -145,11 +147,13 @@ public class FBRepository implements IRepository {
         return retList;
     }
 
+    //get all users
     @Override
     public List<User> getUsers() {
         return new ArrayList<>(userCache.values());
     }
 
+    // get users by ID
     @Override
     public List<User> getUsers(List<Integer> idList) {
         ArrayList<User> retList = new ArrayList<>();
@@ -159,36 +163,43 @@ public class FBRepository implements IRepository {
         return retList;
     }
 
+    // not implemented yet
     @Override
     public List<Place> getPlaces() {
         return null;
     }
 
+    // not going to be used i think, event has list of IDs
     @Override
     public List<UsersPerEvent> getUsersPerEvents() {
         return null;
     }
 
+    // not going to be used i think, user has list of IDs
     @Override
     public List<FriendsPerUser> getFriendsPerUsers() {
         return null;
     }
 
+    // not implemented yet
     @Override
     public List<EventdatePerUser> getEventdatePerUsers() {
         return null;
     }
 
+    //just use createorupdate instead
     @Override
     public void createUser(User user) {
         createOrUpdateUser(user);
     }
 
+    //just use createorupdate instead
     @Override
     public void updateUser(User user) {
         createOrUpdateUser(user);
     }
 
+    // insert new user or update existing user
     @Override
     public void createOrUpdateUser(User user) {
         if(user.getId() == -1){
@@ -199,16 +210,19 @@ public class FBRepository implements IRepository {
         ref.child(Integer.toString(user.getId())).setValue(user);
     }
 
+    //just use createorupdate instead
     @Override
     public void createEvent(Event event) {
         createOrUpdateEvent(event);
     }
 
+    //just use createorupdate instead
     @Override
     public void updateEvent(Event event) {
         createOrUpdateEvent(event);
     }
 
+    // insert new event or update existing event
     @Override
     public void createOrUpdateEvent(Event event) {
         if(event.getId() == -1){
