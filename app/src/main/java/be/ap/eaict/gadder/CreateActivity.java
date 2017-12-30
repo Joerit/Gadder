@@ -107,7 +107,6 @@ public class CreateActivity extends AppCompatActivity {
                             GlobalData.currentUser.getId(),
                             txtDatefrom.getText().toString(),
                             txtDateTill.getText().toString());
-                    newEvent.addInvitedUser(new Tuple<Integer, InviteState>(new Integer(newEvent.getCreator()), InviteState.Accepted));
                     FBRepository.getInstance().createOrUpdateEvent(newEvent);
                     finish();
                 }
