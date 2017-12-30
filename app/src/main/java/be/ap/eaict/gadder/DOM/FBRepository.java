@@ -3,6 +3,7 @@ package be.ap.eaict.gadder.DOM;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.util.SparseArray;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +24,9 @@ import java.util.List;
 public class FBRepository implements IRepository {
     private static FBRepository repo = null;
     protected HashMap<Integer, Event> eventCache;
+    protected Integer nextEventId;
     protected HashMap<Integer, User> userCache;
+    protected Integer nextUserId;
 
 
     public static FBRepository getInstance() {
@@ -36,6 +39,8 @@ public class FBRepository implements IRepository {
     public FBRepository(){
         eventCache = new HashMap<>();
         userCache = new HashMap<>();
+        nextEventId = 0;
+        nextUserId = 0;
 
         FirebaseDatabase fbdb = FirebaseDatabase.getInstance();
 
@@ -46,7 +51,7 @@ public class FBRepository implements IRepository {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d("FBREPO", "adding elements");
                 for(DataSnapshot snap: dataSnapshot.getChildren()){
-                    eventCache.put(new Integer(snap.getKey()), snap.getValue(Event.class));
+                    eventCache.put(Integer.valueOf(snap.getKey()), snap.getValue(Event.class));
                 }
             }
 
@@ -60,19 +65,23 @@ public class FBRepository implements IRepository {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevName) {
                 Log.d("FBREP", "in onChildAdded");
+                Integer id = Integer.valueOf(dataSnapshot.getKey());
                 FBRepository.getInstance().eventCache.put(
-                        new Integer(dataSnapshot.getKey()),
+                        id,
                         dataSnapshot.getValue(Event.class));
+                if(id >= nextEventId){
+                    nextEventId = id+1;
+                }
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot){
-                FBRepository.getInstance().eventCache.remove(new Integer(dataSnapshot.getKey()));
+                FBRepository.getInstance().eventCache.remove(Integer.valueOf(dataSnapshot.getKey()));
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String prevName){
                 FBRepository.getInstance().eventCache.put(
-                        new Integer(dataSnapshot.getKey()),
+                        Integer.valueOf(dataSnapshot.getKey()),
                         dataSnapshot.getValue(Event.class));
             }
 
@@ -91,7 +100,7 @@ public class FBRepository implements IRepository {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot snap: dataSnapshot.getChildren()){
-                    userCache.put(new Integer(snap.getKey()), snap.getValue(User.class));
+                    userCache.put(Integer.valueOf(snap.getKey()), snap.getValue(User.class));
                 }
             }
 
@@ -203,7 +212,8 @@ public class FBRepository implements IRepository {
     @Override
     public void createOrUpdateUser(User user) {
         if(user.getId() == -1){
-            user.setId(userCache.size());
+            user.setId(nextUserId);
+            nextUserId++;
             userCache.put(user.getId(), user);
         }
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("events");
@@ -226,7 +236,8 @@ public class FBRepository implements IRepository {
     @Override
     public void createOrUpdateEvent(Event event) {
         if(event.getId() == -1){
-            event.setId(eventCache.size());
+            event.setId(nextEventId);
+            nextEventId++;
             eventCache.put(event.getId(), event);
         }
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("events");
