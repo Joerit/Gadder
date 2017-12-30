@@ -14,6 +14,12 @@ import android.widget.EditText;
 
 import java.util.Calendar;
 
+import be.ap.eaict.gadder.DOM.Event;
+import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.GlobalData;
+import be.ap.eaict.gadder.DOM.InviteState;
+import be.ap.eaict.gadder.DOM.Tuple;
+
 public class CreateActivity extends AppCompatActivity {
 
     private EditText dateFrom;
@@ -85,6 +91,26 @@ public class CreateActivity extends AppCompatActivity {
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText txtEventName = (EditText)findViewById(R.id.txtEventName);
+                EditText txtDescription = (EditText)findViewById(R.id.txtDescription);
+                EditText txtLocation = (EditText)findViewById(R.id.txtLocation);
+                EditText txtDatefrom = (EditText)findViewById(R.id.txtDateFrom);
+                EditText txtDateTill = (EditText)findViewById(R.id.txtDateTill);
+
+                // TODO: check validity
+                if(true){
+                    Event newEvent = new Event(
+                            -1,
+                            txtEventName.getText().toString(),
+                            txtLocation.getText().toString(),
+                            txtDescription.getText().toString(),
+                            GlobalData.currentUser.getId(),
+                            txtDatefrom.getText().toString(),
+                            txtDateTill.getText().toString());
+                    newEvent.addInvitedUser(new Tuple<Integer, InviteState>(new Integer(newEvent.getCreator()), InviteState.Accepted));
+                    FBRepository.getInstance().createOrUpdateEvent(newEvent);
+                    finish();
+                }
 
             }
         });

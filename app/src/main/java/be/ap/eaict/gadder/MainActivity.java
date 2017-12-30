@@ -5,9 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.GlobalData;
 
 import static be.ap.eaict.gadder.R.layout.activity_main;
 
@@ -23,12 +26,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
+        // why is this line here?
+        //OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
         openActivity();
     }
 
     public void openActivity(){
         Intent intent = new Intent(MainActivity.this,  HomeActivity.class);
+        ArrayList<Integer> intlist = new ArrayList<>();
+        intlist.add(1);
+        GlobalData.currentUser = FBRepository.getInstance().getUsers(intlist).get(0);
+
         startActivity(intent);
         finish();
     }
