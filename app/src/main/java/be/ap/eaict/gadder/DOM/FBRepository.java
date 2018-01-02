@@ -114,18 +114,18 @@ public class FBRepository implements IRepository {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevName) {
                 FBRepository.getInstance().userCache.put(
-                        new Integer(dataSnapshot.getKey()),
+                        Integer.valueOf(dataSnapshot.getKey()),
                         dataSnapshot.getValue(User.class));
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                FBRepository.getInstance().userCache.remove(new Integer(dataSnapshot.getKey()));
+                FBRepository.getInstance().userCache.remove(Integer.valueOf(dataSnapshot.getKey()));
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String prevName) {
                 FBRepository.getInstance().userCache.put(
-                        new Integer(dataSnapshot.getKey()),
+                        Integer.valueOf(dataSnapshot.getKey()),
                         dataSnapshot.getValue(User.class));
             }
 
