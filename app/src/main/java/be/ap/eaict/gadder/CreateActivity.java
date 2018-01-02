@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -97,8 +98,16 @@ public class CreateActivity extends AppCompatActivity {
                 EditText txtDatefrom = (EditText)findViewById(R.id.txtDateFrom);
                 EditText txtDateTill = (EditText)findViewById(R.id.txtDateTill);
 
-                // TODO: check validity
-                if(true){
+                //check validity
+                String strName = txtEventName.getText().toString();
+                String strLoc = txtLocation.getText().toString();
+                String strDesc = txtDescription.getText().toString();
+                String strDateFrom = txtDatefrom.getText().toString();
+                String strDatetill = txtDateTill.getText().toString();
+                if(strName.equals("") || strLoc.equals("") || strDesc.equals("") || strDateFrom.equals("") || strDatetill.equals("")){
+                    Toast.makeText(CreateActivity.this, "please fill out everything", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     Event newEvent = new Event(
                             -1,
                             txtEventName.getText().toString(),
