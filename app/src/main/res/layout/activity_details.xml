@@ -70,14 +70,15 @@
             android:layout_alignParentTop="true"
             android:text="CREATED BY ..." />
 
-        <TextView
-            android:id="@+id/txtDate"
+        <Button
+            android:id="@+id/btnDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:gravity="center_horizontal"
             android:text="DATE"
-            android:textSize="17pt" />
+            android:onClick="dateAvaibleList"
+            android:textSize="14pt" />
 
         <TextView
             android:id="@+id/txtDesc"

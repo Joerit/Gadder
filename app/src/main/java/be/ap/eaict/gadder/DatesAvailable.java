@@ -1,13 +1,13 @@
 package be.ap.eaict.gadder;
 
-import java.io.Serializable;
+
 import java.util.Calendar;
 
 /**
  * Created by Ruben on 29-12-2017.
  */
 
-public class DatesAvailable implements Serializable {
+public class DatesAvailable {
 
     private int id;
 

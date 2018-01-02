@@ -8,11 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 import java.util.List;
 
-import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DOM.FBRepository;
 import be.ap.eaict.gadder.DOM.User;
