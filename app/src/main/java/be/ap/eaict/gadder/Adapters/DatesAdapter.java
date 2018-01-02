@@ -1,4 +1,4 @@
-package be.ap.eaict.gadder;
+package be.ap.eaict.gadder.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,15 +10,18 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.List;
 
+import be.ap.eaict.gadder.DatesAvailable;
+import be.ap.eaict.gadder.R;
+
 /**
  * Created by Ruben on 29-12-2017.
  */
 
-public class ListAdapter extends ArrayAdapter<DatesAvailable> {
+public class DatesAdapter extends ArrayAdapter<DatesAvailable> {
     private final Context context;
     private final List<DatesAvailable> values;
 
-    public ListAdapter(Context context, List<DatesAvailable> values) {
+    public DatesAdapter(Context context, List<DatesAvailable> values) {
         super(context, -1, values);
         this.context = context;
         this.values = values;
