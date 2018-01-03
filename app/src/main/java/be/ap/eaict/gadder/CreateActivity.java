@@ -1,6 +1,7 @@
 package be.ap.eaict.gadder;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.nfc.Tag;
@@ -27,13 +28,14 @@ public class CreateActivity extends AppCompatActivity {
     private EditText eventDate;
     private DatePickerDialog.OnDateSetListener eventDateListener;
     private Button btnCreate;
+    private Button btnDates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        eventDate = (EditText) findViewById(R.id.txtDateFrom);
+        eventDate = (EditText) findViewById(R.id.txtEventDate);
 
         eventDate.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -81,14 +83,10 @@ public class CreateActivity extends AppCompatActivity {
                             txtLocation.getText().toString(),
                             txtDescription.getText().toString(),
                             GlobalData.currentUser.getId(),
-<<<<<<< HEAD
                             txtEventDate.getText().toString(),
                             dates);
                     newEvent.addInvitedUser(new Tuple<Integer, InviteState>(new Integer(newEvent.getCreator()), InviteState.Accepted));
-=======
-                            txtDatefrom.getText().toString(),
-                            txtDateTill.getText().toString());
->>>>>>> origin
+
                     FBRepository.getInstance().createOrUpdateEvent(newEvent);
                     finish();
                 }
@@ -96,6 +94,13 @@ public class CreateActivity extends AppCompatActivity {
             }
         });
 
+        btnDates = (Button) findViewById(R.id.btnDates);
+        btnDates.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(CreateActivity.this, ManageDates.class);
 
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -27,6 +27,7 @@
         <activity android:name=".DetailsActivity" />
         <activity android:name=".DateSelectActivity" />
         <activity android:name=".CreateActivity" />
+        <activity android:name=".ManageDates" />
         <activity
             android:name=".FriendlistActivity"
             android:label="@string/title_activity_friendlist"
