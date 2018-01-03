@@ -81,9 +81,14 @@ public class CreateActivity extends AppCompatActivity {
                             txtLocation.getText().toString(),
                             txtDescription.getText().toString(),
                             GlobalData.currentUser.getId(),
+<<<<<<< HEAD
                             txtEventDate.getText().toString(),
                             dates);
                     newEvent.addInvitedUser(new Tuple<Integer, InviteState>(new Integer(newEvent.getCreator()), InviteState.Accepted));
+=======
+                            txtDatefrom.getText().toString(),
+                            txtDateTill.getText().toString());
+>>>>>>> origin
                     FBRepository.getInstance().createOrUpdateEvent(newEvent);
                     finish();
                 }
