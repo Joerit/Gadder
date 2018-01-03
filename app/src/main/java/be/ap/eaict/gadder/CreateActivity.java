@@ -29,14 +29,16 @@ public class CreateActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener eventDateListener;
     private Button btnCreate;
     private Button btnDates;
+    private List<String> dates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        eventDate = (EditText) findViewById(R.id.txtEventDate);
+        dates = new ArrayList<String>();
 
+        eventDate = (EditText) findViewById(R.id.txtEventDate);
         eventDate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -71,9 +73,6 @@ public class CreateActivity extends AppCompatActivity {
                 EditText txtDescription = (EditText)findViewById(R.id.txtDescription);
                 EditText txtLocation = (EditText)findViewById(R.id.txtLocation);
                 EditText txtEventDate = (EditText)findViewById(R.id.txtEventDate);
-                List<String> dates = new ArrayList<String>();
-                dates.add("1-2-2018");
-                dates.add("2-1-2018");
 
                 // TODO: check validity
                 if(true){
@@ -98,9 +97,24 @@ public class CreateActivity extends AppCompatActivity {
         btnDates.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(CreateActivity.this, ManageDates.class);
-
-                startActivity(intent);
+                intent.putStringArrayListExtra("dates", (ArrayList<String>) dates);
+                startActivityForResult(intent,1);
             }
         });
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == ManageDates.RESULT_OK){
+                List<String> resultDates = new ArrayList<String>();
+                resultDates = data.getStringArrayListExtra("dates");
+                dates = resultDates;
+            }
+            if (resultCode == ManageDates.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
     }
 }

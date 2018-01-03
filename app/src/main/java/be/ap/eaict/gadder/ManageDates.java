@@ -1,6 +1,7 @@
 package be.ap.eaict.gadder;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,8 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+
+import be.ap.eaict.gadder.Adapters.ManageDatesAdapter;
+import be.ap.eaict.gadder.Adapters.OverviewAdapter;
+import be.ap.eaict.gadder.DOM.FBRepository;
 
 /**
  * Created by Ruben on 3-1-2018.
@@ -21,11 +29,18 @@ public class ManageDates extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener addDateListener;
     private EditText addDate;
     private Button btnAddDate;
+    private List<String> dates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_managedates);
+        dates = new ArrayList<String>();
+        fillListWithExistingDates(getIntent().getStringArrayListExtra("dates"));
+        final ListView datesListView = (ListView) findViewById(R.id.listDates);
+
+        final ManageDatesAdapter manageDatesAdapter = new ManageDatesAdapter(this, dates);
+        datesListView.setAdapter(manageDatesAdapter);
 
         addDate = (EditText) findViewById(R.id.txtAddDate);
 
@@ -59,12 +74,28 @@ public class ManageDates extends AppCompatActivity {
         btnAddDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dates.add(addDate.getText().toString());
+                manageDatesAdapter.notifyDataSetChanged();
             }
         });
+    }
+    private void fillListWithExistingDates(List<String> existingDates) {
+        if (!existingDates.isEmpty()) {
+            for (String item : existingDates) {
+                dates.add(item);
+            }
+        }
     }
 
     @Override
     public void onBackPressed(){
+        Intent intent = new Intent();
+        intent.putStringArrayListExtra("dates", (ArrayList<String>) dates);
+        if (!dates.isEmpty()) {
+            setResult(RESULT_OK, intent);
+        } else {
+            setResult(RESULT_CANCELED, intent);
+        }
         finish();
     }
 }
