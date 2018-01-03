@@ -14,6 +14,7 @@ import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.GlobalData;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
 
         final ListView eventsList = (ListView) findViewById(R.id.listViewEvents);
 
-        OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
+        OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEventsByUser(GlobalData.currentUser));
         eventsList.setAdapter(overviewAdapter);
 
         final List<Event> values;

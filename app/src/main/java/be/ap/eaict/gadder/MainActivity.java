@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     public void openActivity(){
         Intent intent = new Intent(MainActivity.this,  HomeActivity.class);
         ArrayList<Integer> intlist = new ArrayList<>();
-        intlist.add(1);
         GlobalData.currentUser = FBRepository.getInstance().getUsers(intlist).get(0);
 
         startActivity(intent);

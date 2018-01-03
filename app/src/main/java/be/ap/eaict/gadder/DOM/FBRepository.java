@@ -156,7 +156,17 @@ public class FBRepository implements IRepository {
         return retList;
     }
 
-    //get all users
+    // get events concerning specific user
+    public List<Event> getEventsByUser(User user) {
+        user = getUser(user.getId());   // make sure refference is up to date
+        return getEvents(user.getInvitedEvents());
+    }
+
+    // get single user
+    public User getUser(Integer userId) {
+        return userCache.get(userId);
+    }
+    // get all users
     @Override
     public List<User> getUsers() {
         return new ArrayList<>(userCache.values());
