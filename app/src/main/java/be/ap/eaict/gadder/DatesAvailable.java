@@ -2,6 +2,8 @@ package be.ap.eaict.gadder;
 
 
 import java.util.Calendar;
+import java.util.List;
+
 
 /**
  * Created by Ruben on 29-12-2017.
@@ -9,66 +11,37 @@ import java.util.Calendar;
 
 public class DatesAvailable {
 
-    private int id;
+    private int eventId;
+    private int userId;
+    private List<String> dates;
+    private int status;
+    private boolean valid;
 
-    private int day;
-    private int month;
-    private int year;
-    private int hour;
-    private int minute;
-
-    public DatesAvailable(int id, int day, int month, int year, int hour, int minute) {
-        this.id = id;
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.hour = hour;
-        this.minute = minute;
+    public DatesAvailable(int eventId, int userId, List<String> dates, int status) {
+        this.eventId = eventId;
+        this.userId  = userId;
+        this.dates = dates;
+        this.status = status;
+        valid = false;
+        Validation();
     }
 
-    public Calendar getDate() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(this.year, this.month, this.day, this.hour, this.minute);
-        return calendar;
+    private void Validation(){
+        if (status == 1) {
+            valid = true;
+        }else {
+            valid = false;
+        }
     }
 
-    public int getDay() {
-        return day;
+    public List<String> getDates(){
+        return dates;
     }
 
-    public void setDay(int day) {
-        this.day = day;
+    public void addDate(String date) {
+        dates.add(date);
     }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public int getMinute() {
-        return minute;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
+    public void removeDate(String date){
+        dates.remove(date);
     }
 }

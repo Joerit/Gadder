@@ -15,8 +15,8 @@ public class Event {
     private String place;
     private String description;
     private int creator;
-    private String startDate;
-    private String endDate;
+    private String eventDate;
+    private List<String> datesAvailable;
     private List<Tuple<Integer, InviteState>> invitedUsers;
 
     public Event(){
@@ -24,14 +24,14 @@ public class Event {
     };
 
     public Event(int id, String name, String place, String description, int creator,
-                 String startDate,String endDate){
+                 String eventDate, List<String> datesAvailable){
         this.id = id;
         this.name = name;
         this.place = place;
         this.description = description;
         this.creator = creator;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.eventDate = eventDate;
+        this.datesAvailable = datesAvailable;
         this.invitedUsers = new ArrayList<>();
         this.invitedUsers.add(new Tuple<Integer, InviteState>(creator, InviteState.Accepted));
     }
@@ -76,21 +76,17 @@ public class Event {
         this.creator = creator;
     }
 
-    public String getStartDate(){
-        return startDate;
+    public String getEventDate(){
+        return eventDate;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    public void setEventDate(String eventDate) {
+        this.eventDate = eventDate;
     }
 
-    public String getEndDate() {
-        return endDate;
-    }
+    public List<String> getDatesAvailable() { return datesAvailable; }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
+    public void setDatesAvailable(List<String> datesAvailable) { this.datesAvailable = datesAvailable; }
 
     public List<Tuple<Integer, InviteState>> getInvitedUsers(){
         return invitedUsers;
