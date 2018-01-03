@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
@@ -22,12 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(activity_main);
         FBRepository.getInstance();
-
     }
 
     public void onClick(View view){
-        // why is this line here?
-        //OverviewAdapter overviewAdapter = new OverviewAdapter(this, FBRepository.getInstance().getEvents());
         openActivity();
     }
 
