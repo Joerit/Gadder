@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.List;
 
+import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DatesAvailable;
 import be.ap.eaict.gadder.R;
 
@@ -17,11 +18,11 @@ import be.ap.eaict.gadder.R;
  * Created by Ruben on 29-12-2017.
  */
 
-public class DatesAdapter extends ArrayAdapter<DatesAvailable> {
+public class DatesAdapter extends ArrayAdapter<String> {
     private final Context context;
-    private final List<DatesAvailable> values;
+    private final List<String> values;
 
-    public DatesAdapter(Context context, List<DatesAvailable> values) {
+    public DatesAdapter(Context context, List<String> values) {
         super(context, -1, values);
         this.context = context;
         this.values = values;
@@ -35,15 +36,8 @@ public class DatesAdapter extends ArrayAdapter<DatesAvailable> {
         TextView textViewDate = (TextView) rowView.findViewById(R.id.txtDate);
 
         //Datum String maken
-        String d = String.valueOf(values.get(position).getDay());
-        String m = String.valueOf(values.get(position).getMonth());
-        String yyyy = String.valueOf(values.get(position).getYear());
-        String date = d + "/" + m + "/" + yyyy;
+        String date = String.valueOf(values.get(position));
 
-        //Tijd String maken
-        String hour = String.valueOf(values.get(position).getHour());
-        String minute = String.valueOf(values.get(position).getMinute());
-        String time = hour + ":" + minute;
 
         //Velden aanpassen met setText met gegevens van de DatesAvailable repository
         textViewDate.setText(date);

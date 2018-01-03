@@ -26,7 +26,7 @@ public class DateSelectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dateselect);
 
         final ListView dates = (ListView) findViewById(R.id.listDates);
-        final DatesAdapter adapter = new DatesAdapter(this, FBRepository.getInstance().getEvents());
+        final DatesAdapter adapter = new DatesAdapter(this, FBRepository.getInstance().getDatesAvailableById(4));
 
         dates.setAdapter(adapter);
     }

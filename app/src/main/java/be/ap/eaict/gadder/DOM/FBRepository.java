@@ -137,6 +137,12 @@ public class FBRepository implements IRepository {
         return new ArrayList<>(eventCache.values());
     }
 
+    // get datesavailable by event ID
+    @Override
+    public List<String> getDatesAvailableById(int id) {
+        return eventCache.get(id).getDatesAvailable();
+    }
+
     // get events by ID
     @Override
     public List<Event> getEvents(List<Integer> idList) {

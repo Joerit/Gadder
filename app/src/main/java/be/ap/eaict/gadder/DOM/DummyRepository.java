@@ -49,6 +49,10 @@ public class DummyRepository implements IRepository {
         return null;
     }
 
+    @Override
+    public List<String> getDatesAvailableById(int id) {
+        return new ArrayList<String>();
+    }
 
     public List<User> getUsers(){
         List<User> users = new ArrayList<>();

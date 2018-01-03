@@ -14,6 +14,8 @@ public interface IRepository {
     //region GETTERS
     List<Event> getEvents();
 
+    List<String> getDatesAvailableById(int id);
+
     List<Event> getEvents(List<Integer> idList);
 
     List<User> getUsers();
