@@ -28,7 +28,7 @@
 
 
         <ImageButton
-            android:id="@+id/btnDeleteFriend"
+            android:id="@+id/btnDeleteDate"
             android:layout_width="10dp"
             android:layout_height="15pt"
             android:layout_gravity="center"

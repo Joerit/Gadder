@@ -29,6 +29,7 @@ public class ManageDates extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener addDateListener;
     private EditText addDate;
     private Button btnAddDate;
+    private Button btnDeleteListItem;
     private List<String> dates;
 
     @Override
