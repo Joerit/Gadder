@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.DummyRepository;
 import be.ap.eaict.gadder.DOM.FBRepository;
 import be.ap.eaict.gadder.DOM.GlobalData;
+import be.ap.eaict.gadder.DOM.User;
 
 import static be.ap.eaict.gadder.R.layout.activity_main;
 
@@ -27,16 +29,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        openActivity();
-    }
-
-    public void openActivity(){
-        Intent intent = new Intent(MainActivity.this,  HomeActivity.class);
-        ArrayList<Integer> intlist = new ArrayList<>();
-        GlobalData.currentUser = FBRepository.getInstance().getUsers(intlist).get(0);
-
-        startActivity(intent);
-        finish();
+        List<User> users = FBRepository.getInstance().getUsers();
+        for(User user : users){
+            // find user with correct name
+            if (user.getUsername().equals(findViewById(R.id.txtUserName))){
+                // if pass is correct login is ok
+                if(user.getPassword().equals(findViewById(R.id.txtPassword))){
+                    GlobalData.currentUser = user;
+                }
+                break;
+            }
+        }
+        if(GlobalData.currentUser == null){
+            Toast.makeText(this, "invalid login", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent intent = new Intent(MainActivity.this,  HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void onClickRegister(View view){
