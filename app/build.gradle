@@ -30,6 +30,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile "com.android.support:support-core-utils:25.4.0"
+    compile 'com.sothree.slidinguppanel:library:3.3.1'
 }
 
 

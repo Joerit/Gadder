@@ -7,112 +7,145 @@
     android:layout_height="match_parent"
     tools:context="be.ap.eaict.gadder.DetailsActivity">
 
-    <RelativeLayout
-        android:id="@+id/layout_buttons"
-        android:layout_width="fill_parent"
-        android:layout_height="230dp">
-
-
-        <ImageButton
-            android:id="@+id/btnEditEvent"
-            android:layout_width="20pt"
-            android:layout_height="20pt"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/roundwhitebutton"
-            android:onClick="onClickEdit"
-            android:src="@drawable/edit"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:scaleType="fitCenter"/>
-
-        <ImageButton
-            android:id="@+id/btnRemoveEvent"
-            android:layout_width="20pt"
-            android:layout_height="20pt"
-            android:layout_alignBottom="@+id/btnEditEvent"
-            android:layout_toStartOf="@+id/btnEditEvent"
-            android:background="@drawable/roundwhitebutton"
-            android:src="@drawable/remove"
-            android:layout_marginRight="5dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:scaleType="fitCenter"/>
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="9dp">
-
-
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:text="NAME"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:id="@+id/txtCreator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:text="CREATED BY ..." />
-
-        <Button
-            android:id="@+id/btnDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:gravity="center_horizontal"
-            android:text="DATE"
-            android:onClick="dateAvailableList"
-            android:textSize="14pt" />
-
-        <TextView
-            android:id="@+id/txtDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:gravity="center_horizontal"
-            android:text="DESCRIPTION"
-            android:textSize="17pt" />
-
-        <TextView
-            android:id="@+id/txtPlace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_horizontal"
-            android:text="PLACE"
-            android:textSize="17pt" />
-
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout_filled"
-        android:layout_width="fill_parent"
-        android:layout_height="333dp"
-        android:layout_alignParentBottom="true"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="239dp">
 
 
 
-    </RelativeLayout>
+
+
+            <com.sothree.slidinguppanel.SlidingUpPanelLayout
+                xmlns:sothree="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/sliding_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                sothree:umanoPanelHeight="33dp"
+                sothree:umanoShadowHeight="4dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/layout_buttons"
+                        android:layout_width="fill_parent"
+                        android:layout_height="230dp">
+
+
+                        <ImageButton
+                            android:id="@+id/btnEditEvent"
+                            android:layout_width="20pt"
+                            android:layout_height="20pt"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/roundwhitebutton"
+                            android:onClick="onClickEdit"
+                            android:src="@drawable/edit"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:scaleType="fitCenter"/>
+
+                        <ImageButton
+                            android:id="@+id/btnRemoveEvent"
+                            android:layout_width="20pt"
+                            android:layout_height="20pt"
+                            android:layout_alignBottom="@+id/btnEditEvent"
+                            android:layout_toStartOf="@+id/btnEditEvent"
+                            android:background="@drawable/roundwhitebutton"
+                            android:src="@drawable/remove"
+                            android:layout_marginRight="5dp"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:scaleType="fitCenter"/>
+                    </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="9dp">
+
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:text="NAME"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/txtCreator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:text="CREATED BY ..." />
+
+                    <Button
+                        android:id="@+id/btnDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center_horizontal"
+                        android:text="DATE"
+                        android:onClick="dateAvailableList"
+                        android:textSize="14pt" />
+
+                    <TextView
+                        android:id="@+id/txtDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center_horizontal"
+                        android:text="DESCRIPTION"
+                        android:textSize="17pt" />
+
+                    <TextView
+                        android:id="@+id/txtPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center_horizontal"
+                        android:text="PLACE"
+                        android:textSize="17pt" />
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout_filled"
+                    android:layout_width="fill_parent"
+                    android:layout_height="333dp"
+                    android:layout_alignParentBottom="true"
+                    tools:layout_editor_absoluteX="54dp"
+                    tools:layout_editor_absoluteY="239dp">
+
+
+                </RelativeLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:text="Invite your friends..."
+                    android:textSize="16sp" />
+            </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+
+
+
 
 
 </android.support.constraint.ConstraintLayout>
