@@ -77,7 +77,7 @@
             android:layout_alignParentTop="true"
             android:gravity="center_horizontal"
             android:text="DATE"
-            android:onClick="dateAvaibleList"
+            android:onClick="dateAvailableList"
             android:textSize="14pt" />
 
         <TextView

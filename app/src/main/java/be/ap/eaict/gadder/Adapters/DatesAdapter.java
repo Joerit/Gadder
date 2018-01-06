@@ -7,11 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.Calendar;
 import java.util.List;
 
-import be.ap.eaict.gadder.DOM.Event;
-import be.ap.eaict.gadder.DatesAvailable;
 import be.ap.eaict.gadder.R;
 
 /**
