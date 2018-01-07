@@ -34,7 +34,8 @@ public class InvitationAdapter extends ArrayAdapter<User> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.customfriendinviteslayout, parent, false);
+        View rowView = inflater.inflate(R.layout.customfriendsineventlayout, parent, false);
+
 
         //Insert data
 

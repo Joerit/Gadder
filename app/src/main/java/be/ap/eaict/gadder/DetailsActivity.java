@@ -16,20 +16,18 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        populateList();
+
     }
 
-    /*public void onResume(){
+    public void onResume(){
         super.onResume();
-        populateList();
-    }*/
-
-    public void populateList(){
         final ListView friendInviteList = (ListView) findViewById(R.id.inviteFriendsInEventList);
 
         InvitationAdapter invitationAdapter = new InvitationAdapter(this, FBRepository.getInstance().getUsers());
         friendInviteList.setAdapter(invitationAdapter);
     }
+
+
 
     public void onClickEdit(View view){
         openEditActivity();
