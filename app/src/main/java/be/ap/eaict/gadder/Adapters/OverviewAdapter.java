@@ -45,7 +45,7 @@ public class OverviewAdapter extends ArrayAdapter<Event> {
 
 
         txtNaam.setText(values.get(position).getName());
-        txtDatum.setText(values.get(position).getStartDate());
+        txtDatum.setText(values.get(position).getEventDate());
 
 
 

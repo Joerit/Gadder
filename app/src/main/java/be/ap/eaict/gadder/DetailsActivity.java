@@ -27,7 +27,7 @@ public class DetailsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void dateAvaibleList(View view){
+    public void dateAvailableList(View view){
         Intent intent = new Intent(DetailsActivity.this, DateSelectActivity.class);
         startActivity(intent);
     }

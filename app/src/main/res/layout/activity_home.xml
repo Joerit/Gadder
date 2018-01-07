@@ -36,9 +36,9 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:background="@drawable/styledbuttons"
-                android:textColor="@drawable/buttoncolorwhite"
                 android:onClick="onClickCreate"
-                android:text="Create" />
+                android:text="Create"
+                android:textColor="@drawable/buttoncolorwhite" />
         </LinearLayout>
 
         <LinearLayout

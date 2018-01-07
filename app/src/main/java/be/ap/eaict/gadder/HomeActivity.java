@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.Calendar;
 import java.util.List;
 
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
@@ -31,7 +32,6 @@ public class HomeActivity extends AppCompatActivity {
         final List<Event> values;
         values = FBRepository.getInstance().getEvents();
 
-
         eventsList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
@@ -42,6 +42,35 @@ public class HomeActivity extends AppCompatActivity {
         );
     }
 
+    /*public Event getNextEvent(List<Event> values){
+        Calendar today = Calendar.getInstance();
+        Calendar crntApp = Calendar.getInstance();
+        Calendar nxtApp = Calendar.getInstance();
+
+        Event nextEvent = values.get(0);
+        for (Event event: values) {
+
+            String date = event.getEventDate();
+
+
+
+
+            crntApp.set(event.getYear(), event.getMonth(),
+                    event.getDay(), event.getHour(),
+                    event.getMinute());
+            nxtApp.set(nexteEvent.getYear(),nextEvent.getMonth(),
+                    nextEvent.getDay(), nextEvent.getHour(),
+                    nextEvent.getMinute());
+            if(crntApp.compareTo(today) > 0){
+                if(crntApp.compareTo(nxtApp) < 0){
+                    nextEvent = event;
+                }
+            }
+        }
+
+        return nextEvent;
+    }
+*/
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
