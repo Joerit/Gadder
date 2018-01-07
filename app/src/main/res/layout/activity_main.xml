@@ -23,26 +23,26 @@
             android:src="@drawable/logo" />
 
         <EditText
-            android:id="@+id/txtEmail"
+            android:id="@+id/txtUserName"
             android:layout_width="100pt"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/imageLogo"
             android:layout_below="@+id/imageLogo"
             android:layout_marginTop="35dp"
             android:ems="10"
-            android:hint="Username or E-mail"
-            android:inputType="textEmailAddress" />
+            android:hint="Username"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="100pt"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/txtEmail"
-            android:layout_below="@+id/txtEmail"
+            android:layout_alignStart="@+id/txtUserName"
+            android:layout_below="@+id/txtUserName"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textAutoCorrect|textPassword" />
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -83,7 +83,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/txtEmail"
+            android:layout_above="@+id/txtUserName"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="35dp"
             android:text="slogan" />

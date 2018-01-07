@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -60,7 +61,7 @@ public class CreateActivity extends AppCompatActivity {
         eventDateListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                month = (int)month + 1;
+                month = month + 1;
                 eventDate.setText(dayOfMonth + "-" + month + "-" + year);
             }
         };
@@ -74,8 +75,18 @@ public class CreateActivity extends AppCompatActivity {
                 EditText txtLocation = (EditText)findViewById(R.id.txtLocation);
                 EditText txtEventDate = (EditText)findViewById(R.id.txtEventDate);
 
-                // TODO: check validity
-                if(true){
+                //check validity
+                String strName = txtEventName.getText().toString();
+                String strLoc = txtLocation.getText().toString();
+                String strDesc = txtDescription.getText().toString();
+
+                if(strName.equals("") || strLoc.equals("") || strDesc.equals("")){
+                    Toast.makeText(CreateActivity.this, "please fill out everything", Toast.LENGTH_SHORT).show();
+                }
+                else if (dates.size() == 0){
+                    Toast.makeText(CreateActivity.this, "Please add at least one date", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     Event newEvent = new Event(
                             -1,
                             txtEventName.getText().toString(),
@@ -84,9 +95,15 @@ public class CreateActivity extends AppCompatActivity {
                             GlobalData.currentUser.getId(),
                             txtEventDate.getText().toString(),
                             dates);
-                    newEvent.addInvitedUser(new Tuple<Integer, InviteState>(new Integer(newEvent.getCreator()), InviteState.Accepted));
+                    newEvent.addInvitedUser(GlobalData.currentUser);
 
-                    FBRepository.getInstance().createOrUpdateEvent(newEvent);
+                    FBRepository repo = FBRepository.getInstance();
+                    //first create event to get ID
+                    repo.createOrUpdateEvent(newEvent);
+                    Log.d("ONCLICK", "newEventID = " + newEvent.getId());
+                    GlobalData.currentUser.addEvent(newEvent);
+                    repo.createOrUpdateUser(GlobalData.currentUser);
+
                     finish();
                 }
 
