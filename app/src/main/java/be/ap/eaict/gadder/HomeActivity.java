@@ -20,8 +20,9 @@ import be.ap.eaict.gadder.DOM.GlobalData;
 public class HomeActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onResume() {
+        Log.d("", "onCreate: globaluser=" + GlobalData.currentUser.getUsername());
+        super.onResume();
         setContentView(R.layout.activity_home);
 
         final ListView eventsList = (ListView) findViewById(R.id.listViewEvents);
