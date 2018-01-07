@@ -2,7 +2,9 @@ package be.ap.eaict.gadder.DOM;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Kevin-Laptop on 20/12/2017.
@@ -17,7 +19,7 @@ public class Event {
     private int creator;
     private String eventDate;
     private List<String> datesAvailable;
-    private List<Tuple<Integer, InviteState>> invitedUsers;
+    private HashMap<String, Invite> invitedUsers;
 
     public Event(){
 
@@ -32,8 +34,8 @@ public class Event {
         this.creator = creator;
         this.eventDate = eventDate;
         this.datesAvailable = datesAvailable;
-        this.invitedUsers = new ArrayList<>();
-        this.invitedUsers.add(new Tuple<Integer, InviteState>(creator, InviteState.Accepted));
+        this.invitedUsers = new HashMap<>();
+        this.invitedUsers.put(Integer.toString(creator), new Invite(creator, InviteState.Accepted, datesAvailable));
     }
 
     public int getId() {
@@ -88,16 +90,16 @@ public class Event {
 
     public void setDatesAvailable(List<String> datesAvailable) { this.datesAvailable = datesAvailable; }
 
-    public List<Tuple<Integer, InviteState>> getInvitedUsers(){
+    public HashMap<String, Invite> getInvitedUsers(){
         return invitedUsers;
     }
 
-    public void setInvitedUser(List<Tuple<Integer, InviteState>> invitedUsers) {
+    public void setInvitedUser(HashMap<String, Invite> invitedUsers) {
         this.invitedUsers = invitedUsers;
     }
 
-    public void addInvitedUser(Tuple<Integer, InviteState> invite){
-        invitedUsers.add(invite);
+    public void addInvitedUser(User user){
+        invitedUsers.put(Integer.toString(user.getId()), new Invite(user.getId(), InviteState.Invited, new ArrayList<String>()));
     }
 
 }

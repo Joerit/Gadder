@@ -113,9 +113,13 @@ public class FBRepository implements IRepository {
         userRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevName) {
+                Integer id = Integer.valueOf(dataSnapshot.getKey());
                 FBRepository.getInstance().userCache.put(
-                        Integer.valueOf(dataSnapshot.getKey()),
+                        Integer.valueOf(id),
                         dataSnapshot.getValue(User.class));
+                if(id >= nextUserId){
+                    nextUserId = id+1;
+                }
             }
 
             @Override
@@ -124,9 +128,13 @@ public class FBRepository implements IRepository {
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String prevName) {
+                Integer id = Integer.valueOf(dataSnapshot.getKey());
                 FBRepository.getInstance().userCache.put(
-                        Integer.valueOf(dataSnapshot.getKey()),
+                        Integer.valueOf(id),
                         dataSnapshot.getValue(User.class));
+                if(id >= nextUserId){
+                    nextUserId = id+1;
+                }
             }
 
             public void onChildMoved(DataSnapshot dataSnapshot, String prevName) {
@@ -232,7 +240,7 @@ public class FBRepository implements IRepository {
             nextUserId++;
             userCache.put(user.getId(), user);
         }
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("events");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
         ref.child(Integer.toString(user.getId())).setValue(user);
     }
 

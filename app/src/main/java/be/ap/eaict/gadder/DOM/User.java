@@ -68,6 +68,10 @@ public class User {
         this.invitedEvents = invitedEvents;
     }
 
+    public void addEvent(Event event){
+        this.invitedEvents.add(event.getId());
+    }
+
     public void setFriends(List<Tuple<Integer, InviteState>> friends){
         this.friends = friends;
     }
