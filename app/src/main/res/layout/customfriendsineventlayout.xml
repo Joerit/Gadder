@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/txtInviteFriendInEventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="35dp" />
+
+        <Button
+            android:id="@+id/btnInviteFriend"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="19dp"
+            android:background="@drawable/styledbuttons"
+            android:text="INVITE"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
