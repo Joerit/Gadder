@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="bottom"
-                sothree:umanoPanelHeight="33dp"
+                sothree:umanoPanelHeight="30dp"
                 sothree:umanoShadowHeight="4dp">
 
 
@@ -143,16 +143,19 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="60dp"
                         android:gravity="center|top"
                         android:text="Invite your friends..."
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:background="@color/colorPrimaryDark"
+                        android:textColor="#FFFFFF"/>
 
                     <ListView
                         android:id="@+id/inviteFriendsInEventList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"/>
+                        android:layout_marginTop="30dp"
+                        android:background="#FFFFFF"/>
 
 
                 </RelativeLayout>

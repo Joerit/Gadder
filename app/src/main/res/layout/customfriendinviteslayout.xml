@@ -10,20 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:weightSum="8">
+        android:weightSum="100"
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/txtFriendInviteName"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="17dp"
-            android:text="TextView"
-            android:textSize="18dp"
-            android:layout_weight="6"
             android:layout_gravity="center_vertical"
-            />
+            android:layout_marginStart="17dp"
+            android:layout_weight="75"
+            android:text="TextView"
+            android:textSize="18dp" />
 
 
         <ImageButton
@@ -33,15 +33,18 @@
             android:layout_alignTop="@+id/btnDeclineInvite"
             android:layout_gravity="center"
             android:layout_toStartOf="@+id/btnDeclineInvite"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:background="@drawable/roundwhitebutton"
             android:focusable="false"
             android:paddingBottom="5dp"
             android:paddingLeft="8dp"
             android:paddingRight="5dp"
             android:paddingTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/checked" />
+            android:src="@drawable/checked"
+            android:baselineAlignBottom="true"/>
 
         <ImageButton
             android:id="@+id/btnDeclineInvite"
@@ -50,7 +53,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/txtFriendInviteName"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:background="@drawable/roundwhitebutton"
             android:focusable="false"
             android:paddingBottom="10dp"
