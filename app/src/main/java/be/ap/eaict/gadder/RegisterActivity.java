@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(userName.equals("") || email.equals("") || pass.equals("") || repeatPass.equals("")){
                     Toast.makeText(RegisterActivity.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
                 }
-                else if (pass.equals(repeatPass)){
+                else if (!pass.equals(repeatPass)){
                     Toast.makeText(RegisterActivity.this, "please retype paswords", Toast.LENGTH_SHORT).show();
                 }
                 else{
