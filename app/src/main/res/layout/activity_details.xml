@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="33dp"
+        sothree:umanoPanelHeight="30dp"
         sothree:umanoShadowHeight="4dp">
 
         <RelativeLayout
@@ -138,8 +138,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
 
                     <TextView
