@@ -14,16 +14,18 @@ import be.ap.eaict.gadder.DOM.User;
 
 public class RegisterActivity extends AppCompatActivity {
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         TextView txtLoginLink = (TextView) findViewById(R.id.txtLoginLink);
-        txtLoginLink.setMovementMethod(LinkMovementMethod.getInstance());
+        txtLoginLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Button btnRegister = (Button) findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
