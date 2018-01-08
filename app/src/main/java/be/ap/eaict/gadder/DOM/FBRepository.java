@@ -148,6 +148,11 @@ public class FBRepository implements IRepository {
         });
     }
 
+    // get event by ID
+    public Event getEvent(int id){
+        return eventCache.get(id);
+    }
+
     // get all events
     @Override
     public List<Event> getEvents(){

@@ -99,6 +99,7 @@ public class Event {
 
     public void addInvitedUser(User user){
         invitedUsers.put(user.getUsername(), new Invite(user.getId(), InviteState.Invited, new ArrayList<String>()));
+        FBRepository.getInstance().createOrUpdateEvent(this);
     }
 
 }

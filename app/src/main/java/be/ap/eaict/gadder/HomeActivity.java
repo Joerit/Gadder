@@ -115,7 +115,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
 
         //INPUT DATA
-
+        intent.putExtra("id", event.getId());
         //
 
         startActivity(intent);
