@@ -9,11 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:weightSum="8">
+        android:weightSum="100"
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/txtFriendName"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -21,7 +22,7 @@
             android:layout_gravity="center"
             android:text="TextView"
             android:textSize="18dp"
-            android:layout_weight="7"/>
+            android:layout_weight="90"/>
 
 
         <ImageButton
@@ -32,8 +33,9 @@
             android:layout_marginBottom="2pt"
             android:layout_marginRight="10dp"
             android:layout_marginTop="2pt"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:background="@drawable/roundwhitebutton"
+            android:layout_marginLeft="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"

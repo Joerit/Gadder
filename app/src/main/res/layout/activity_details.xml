@@ -111,7 +111,18 @@
                     android:textSize="17pt" />
 
 
+<<<<<<< HEAD
             </LinearLayout>
+=======
+            <com.sothree.slidinguppanel.SlidingUpPanelLayout
+                xmlns:sothree="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/sliding_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                sothree:umanoPanelHeight="30dp"
+                sothree:umanoShadowHeight="4dp">
+>>>>>>> Kevin
 
 
             <RelativeLayout
@@ -123,6 +134,7 @@
                 tools:layout_editor_absoluteY="239dp">
 
 
+<<<<<<< HEAD
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/map"
@@ -133,6 +145,23 @@
 
             </RelativeLayout>
         </RelativeLayout>
+=======
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center|top"
+                        android:text="Invite your friends..."
+                        android:textSize="16sp"
+                        android:background="@color/colorPrimaryDark"
+                        android:textColor="#FFFFFF"/>
+
+                    <ListView
+                        android:id="@+id/inviteFriendsInEventList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:background="#FFFFFF"/>
+>>>>>>> Kevin
 
 
 
