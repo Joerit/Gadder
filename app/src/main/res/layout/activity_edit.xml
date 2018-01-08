@@ -86,7 +86,7 @@
             android:layout_marginRight="30dp"/>
 
         <EditText
-            android:id="@+id/txtDateFrom"
+            android:id="@+id/txtEventDate"
             android:clickable="true"
             android:inputType="none"
             android:focusable="false"
@@ -98,29 +98,17 @@
             android:layout_marginRight="30dp"
             android:maxLength="10"/>
 
-        <TextView
-            android:id="@+id/textView12"
+        <Button
+            android:id="@+id/btnDates"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/txtDateTill"
-            android:layout_alignStart="@+id/txtDateTill"
-            android:layout_below="@+id/txtDateFrom"
-            android:layout_marginTop="13dp"
-            android:gravity="center"
-            android:text="To" />
-
-        <EditText
-            android:id="@+id/txtDateTill"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView12"
-            android:ems="10"
-            android:inputType="none"
-            android:clickable="true"
-            android:focusable="false"
+            android:layout_height="50dp"
+            android:layout_below="@+id/txtEventDate"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:maxLength="10"/>
+            android:text="Manage dates"
+            android:background="@drawable/styledbuttons"
+            android:textColor="@drawable/buttoncolorwhite"/>
 
         <Button
             android:id="@+id/btnCreate"

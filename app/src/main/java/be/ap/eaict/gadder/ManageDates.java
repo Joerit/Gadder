@@ -17,8 +17,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import be.ap.eaict.gadder.Adapters.ManageDatesAdapter;
-import be.ap.eaict.gadder.Adapters.OverviewAdapter;
-import be.ap.eaict.gadder.DOM.FBRepository;
 
 /**
  * Created by Ruben on 3-1-2018.
@@ -77,6 +75,7 @@ public class ManageDates extends AppCompatActivity {
             public void onClick(View v) {
                 dates.add(addDate.getText().toString());
                 manageDatesAdapter.notifyDataSetChanged();
+                addDate.setText("");
             }
         });
     }
