@@ -8,12 +8,20 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import be.ap.eaict.gadder.Adapters.InvitationAdapter;
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DOM.FBRepository;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends AppCompatActivity
+        implements OnMapReadyCallback{
     Event event;
     private int _id;
     @Override
@@ -28,7 +36,23 @@ public class DetailsActivity extends AppCompatActivity {
 
         txtName.setText(event.getName());
         txtCreator.setText(FBRepository.getInstance().getUser(event.getCreator()).getUsername());
+
+
+        //GOOGLE MAPS
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng APhogeschool = new LatLng(51.2300581, 4.4160022);
+        googleMap.addMarker(new MarkerOptions().position(APhogeschool)
+                .title("Marker on AP"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(APhogeschool));
+    }
+
 
     public void onResume(){
         super.onResume();

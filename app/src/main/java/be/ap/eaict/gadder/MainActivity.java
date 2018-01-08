@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         GlobalData.currentUser = null;
 
         setContentView(activity_main);
+        FirebaseApp.initializeApp(this);
         FBRepository.getInstance();
     }
 
