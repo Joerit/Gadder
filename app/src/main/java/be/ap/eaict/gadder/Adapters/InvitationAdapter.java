@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,6 +51,7 @@ public class InvitationAdapter extends ArrayAdapter<User> {
             @Override
             public void onClick(View v) {
                 event.addInvitedUser(values.get(position));
+                Toast.makeText(context, "added " + values.get(position).getUsername(), Toast.LENGTH_SHORT).show();
             }
         });
 

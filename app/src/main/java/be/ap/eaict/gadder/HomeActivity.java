@@ -113,11 +113,10 @@ public class HomeActivity extends AppCompatActivity {
 
     public void openDetailsActivity(Event event) {
         Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-
         //INPUT DATA
         intent.putExtra("id", event.getId());
         //
-
+        Log.d("OpenDetails", "opening activity: "+intent.toString());
         startActivity(intent);
     }
 
