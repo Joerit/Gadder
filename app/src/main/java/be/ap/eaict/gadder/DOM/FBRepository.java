@@ -148,6 +148,11 @@ public class FBRepository implements IRepository {
         });
     }
 
+    // get event by ID
+    public Event getEvent(int id){
+        return eventCache.get(id);
+    }
+
     // get all events
     @Override
     public List<Event> getEvents(){
@@ -174,6 +179,16 @@ public class FBRepository implements IRepository {
     public List<Event> getEventsByUser(User user) {
         user = getUser(user.getId());   // make sure refference is up to date
         return getEvents(user.getInvitedEvents());
+    }
+
+    // get single user by name
+    public User getUser(String userName) {
+        for (User user: userCache.values()) {
+            if(user.getUsername().equals(userName)){
+                return user;
+            }
+        }
+        return null;
     }
 
     // get single user

@@ -41,17 +41,22 @@ public class RegisterActivity extends AppCompatActivity {
                 String pass = txtPassword.getText().toString();
                 String repeatPass = txtRepeatPassword.getText().toString();
 
+
                 if(userName.equals("") || email.equals("") || pass.equals("") || repeatPass.equals("")){
                     Toast.makeText(RegisterActivity.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
                 }
-                else if (!pass.equals(repeatPass)){
-                    Toast.makeText(RegisterActivity.this, "please retype passwords", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    User newUser = new User(-1, userName, email, pass);
-                    FBRepository.getInstance().createUser(newUser);
-                    Toast.makeText(RegisterActivity.this, "Succesfully registered", Toast.LENGTH_SHORT).show();
-                    finish();
+                else {
+                    if (FBRepository.getInstance().getUser(userName) != null){
+                        Toast.makeText(RegisterActivity.this, "user with that name already exists", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (!pass.equals(repeatPass)) {
+                        Toast.makeText(RegisterActivity.this, "please retype passwords", Toast.LENGTH_SHORT).show();
+                    } else {
+                        User newUser = new User(-1, userName, email, pass);
+                        FBRepository.getInstance().createUser(newUser);
+                        Toast.makeText(RegisterActivity.this, "Succesfully registered", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         });
