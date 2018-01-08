@@ -16,7 +16,11 @@ import be.ap.eaict.gadder.DOM.FBRepository;
  * Created by Ruben on 28-12-2017.
  */
 
+
+
 public class DateSelectActivity extends AppCompatActivity {
+    private int _id;
+
     private static final String TAG = "DateSelectActivity";
 
     FBRepository data = new FBRepository();
@@ -25,8 +29,9 @@ public class DateSelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dateselect);
 
+        _id = (int)getIntent().getExtras().get("id");
         final ListView dates = (ListView) findViewById(R.id.listDates);
-        final DatesAdapter adapter = new DatesAdapter(this, FBRepository.getInstance().getDatesAvailableById(4));
+        final DatesAdapter adapter = new DatesAdapter(this, FBRepository.getInstance().getDatesAvailableById(_id));
 
         dates.setAdapter(adapter);
     }

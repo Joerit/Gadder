@@ -14,12 +14,14 @@ import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DOM.FBRepository;
 
 public class DetailsActivity extends AppCompatActivity {
-    Event event = null;
+    Event event;
+    private int _id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        event = FBRepository.getInstance().getEvent(getIntent().getIntExtra("id", 0));
+        _id = (int)getIntent().getExtras().get("id");
+        event = FBRepository.getInstance().getEvent(_id);
         Log.d("DETAILS", "onCreate: "+event.toString());
         TextView txtName = (TextView)findViewById(R.id.txtName);
         TextView txtCreator = (TextView)findViewById(R.id.txtCreator);
@@ -44,16 +46,13 @@ public class DetailsActivity extends AppCompatActivity {
 
     public void openEditActivity(){
         Intent intent = new Intent(DetailsActivity.this, EditActivity.class);
-
-        //INPUT DATA
-
-        //
-
+        intent.putExtra("eventId", event.getId());
         startActivity(intent);
     }
 
     public void dateAvailableList(View view){
         Intent intent = new Intent(DetailsActivity.this, DateSelectActivity.class);
+        intent.putExtra("eventId", event.getId());
         startActivity(intent);
     }
 }
