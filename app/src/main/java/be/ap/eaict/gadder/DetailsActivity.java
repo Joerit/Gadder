@@ -48,7 +48,7 @@ public class DetailsActivity extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng APhogeschool = new LatLng(51.2300581, 4.4160022);
-        googleMap.addMarker(new MarkerOptions().position(APhogeschool)
+        googleMap.addMarker(new MarkerOptions().position(APhogeschool) // ADDING MARKER
                 .title("Marker on AP"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(APhogeschool));
     }
