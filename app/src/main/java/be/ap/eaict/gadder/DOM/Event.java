@@ -35,7 +35,6 @@ public class Event {
         this.eventDate = eventDate;
         this.datesAvailable = datesAvailable;
         this.invitedUsers = new HashMap<>();
-        this.invitedUsers.put(Integer.toString(creator), new Invite(creator, InviteState.Accepted, datesAvailable));
     }
 
     public int getId() {
