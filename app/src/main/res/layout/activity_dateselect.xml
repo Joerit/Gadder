@@ -17,7 +17,7 @@
             android:layout_weight="1" />
 
         <Button
-        android:id="@+id/btnCreate"
+        android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Save"
