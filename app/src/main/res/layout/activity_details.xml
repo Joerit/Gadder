@@ -29,7 +29,6 @@
 
                 <ImageButton
                     android:id="@+id/btnCalendarEvent"
-                    android:onClick="dateAvailableList"
                     android:layout_width="20pt"
                     android:layout_height="20pt"
                     android:layout_alignParentEnd="true"
@@ -111,22 +110,15 @@
                     android:textColor="#FFFFFF"/>
 
                 <TextView
-<<<<<<< HEAD
-                    android:id="@+id/btnDate"
-=======
+
                     android:id="@+id/txtDate"
->>>>>>> 19091247f963513437ff98727a19572150506ba1
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"
                     android:text="DATE"
-<<<<<<< HEAD
-                    android:textSize="14pt" />
-=======
                     android:textSize="14pt"
                     android:layout_marginTop="10dp"/>
->>>>>>> 19091247f963513437ff98727a19572150506ba1
 
                 <TextView
                     android:id="@+id/txtPlace"
@@ -146,9 +138,6 @@
                     android:gravity="center_horizontal"
                     android:text="DESCRIPTION"
                     android:textSize="14pt" />
-
-
-
 
             </LinearLayout>
 
