@@ -10,10 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import be.ap.eaict.gadder.DOM.Event;
+import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.GlobalData;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -22,13 +27,18 @@ public class EditActivity extends AppCompatActivity {
     private Button btnEdit;
     private Button btnDates;
     private List<String> dates;
+    private int _id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
+
+        _id = (int)getIntent().getExtras().get("eventId");
         dates = new ArrayList<String>();
+
+        fillData();
 
         eventDate = (EditText) findViewById(R.id.txtEventDate);
         eventDate.setOnClickListener(new View.OnClickListener(){
@@ -46,6 +56,7 @@ public class EditActivity extends AppCompatActivity {
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+
             }
         });
 
@@ -77,6 +88,22 @@ public class EditActivity extends AppCompatActivity {
             }
             if (resultCode == ManageDates.RESULT_CANCELED) {
                 //Write your code if there's no result
+            }
+        }
+    }
+
+    private void fillData(){
+        EditText txtEventName= (EditText) findViewById(R.id.txtEventName);
+        EditText txtDescription = (EditText) findViewById(R.id.txtDescription);
+        EditText txtLocation = (EditText) findViewById(R.id.txtLocation);
+        EditText txtEventDate = (EditText) findViewById(R.id.txtEventDate);
+
+        for(Event event : FBRepository.getInstance().getEventsByUser(GlobalData.currentUser)){
+            if(event.getId() == _id){
+                txtEventName.setText(event.getName(), TextView.BufferType.EDITABLE);
+               // txtDescription.setText(event.getDescription(), TextView.BufferType.EDITABLE);
+                txtLocation.setText(event.getPlace(), TextView.BufferType.EDITABLE);
+                txtEventDate.setText(event.getEventDate(), TextView.BufferType.EDITABLE);
             }
         }
     }
