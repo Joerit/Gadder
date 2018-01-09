@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -73,12 +74,20 @@ public class ManageDates extends AppCompatActivity {
         btnAddDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dates.add(addDate.getText().toString());
-                manageDatesAdapter.notifyDataSetChanged();
-                addDate.setText("");
+
+
+                if (addDate.getText().toString().equals("")) {
+
+                }
+                else{
+                    dates.add(addDate.getText().toString());
+                    manageDatesAdapter.notifyDataSetChanged();
+                    addDate.setText("");
+                }
             }
         });
     }
+
     private void fillListWithExistingDates(List<String> existingDates) {
         if (!existingDates.isEmpty()) {
             for (String item : existingDates) {
