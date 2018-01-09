@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         eventsList.setAdapter(overviewAdapter);
 
         final List<Event> values;
-        values = FBRepository.getInstance().getEvents();
+        values = FBRepository.getInstance().getEventsByUser(GlobalData.currentUser);
 
         eventsList.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
@@ -115,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
         //INPUT DATA
         intent.putExtra("id", event.getId());
+
         //
         Log.d("OpenDetails", "opening activity: "+intent.toString());
         startActivity(intent);

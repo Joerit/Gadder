@@ -15,10 +15,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.w3c.dom.Text;
+
 import be.ap.eaict.gadder.Adapters.InvitationAdapter;
 import be.ap.eaict.gadder.Adapters.OverviewAdapter;
 import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.GlobalData;
 
 public class DetailsActivity extends AppCompatActivity
         implements OnMapReadyCallback{
@@ -37,6 +40,7 @@ public class DetailsActivity extends AppCompatActivity
         txtName.setText(event.getName());
         txtCreator.setText("Created by " +  FBRepository.getInstance().getUser(event.getCreator()).getUsername());
 
+        fillData();
 
         //GOOGLE MAPS
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -63,6 +67,21 @@ public class DetailsActivity extends AppCompatActivity
         friendInviteList.setAdapter(invitationAdapter);
     }
 
+    public void fillData(){
+
+        TextView txtDate = (TextView) findViewById(R.id.txtDate);
+        TextView txtPlace = (TextView) findViewById(R.id.txtPlace);
+        TextView txtDescription = (TextView) findViewById(R.id.txtDescription);
+
+        for(Event event : FBRepository.getInstance().getEventsByUser(GlobalData.currentUser)){
+            if(event.getId() == _id){
+                txtDate.setText(event.getEventDate());
+                txtPlace.setText(event.getPlace());
+                //txtDescription.setText(event.getDescription());
+            }
+        }
+    }
+
 
 
     public void onClickEdit(View view){
@@ -70,8 +89,14 @@ public class DetailsActivity extends AppCompatActivity
     }
 
     public void openEditActivity(){
+        String txtWhat = new String();
+        String txtHow = new String();
+        String txtWhere = new String();
+        String txtDate = new String();
+
         Intent intent = new Intent(DetailsActivity.this, EditActivity.class);
         intent.putExtra("eventId", event.getId());
+
         startActivity(intent);
     }
 
