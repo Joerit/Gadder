@@ -35,7 +35,7 @@ public class DetailsActivity extends AppCompatActivity
         TextView txtCreator = (TextView)findViewById(R.id.txtCreator);
 
         txtName.setText(event.getName());
-        txtCreator.setText(FBRepository.getInstance().getUser(event.getCreator()).getUsername());
+        txtCreator.setText("Created by " +  FBRepository.getInstance().getUser(event.getCreator()).getUsername());
 
 
         //GOOGLE MAPS
@@ -50,6 +50,7 @@ public class DetailsActivity extends AppCompatActivity
         LatLng APhogeschool = new LatLng(51.2300581, 4.4160022);
         googleMap.addMarker(new MarkerOptions().position(APhogeschool) // ADDING MARKER
                 .title("Marker on AP"));
+        googleMap.moveCamera(CameraUpdateFactory.zoomTo(16));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(APhogeschool));
     }
 

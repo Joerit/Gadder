@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="30dp"
+        sothree:umanoPanelHeight="40dp"
         sothree:umanoShadowHeight="4dp">
 
         <RelativeLayout
@@ -24,19 +24,37 @@
             <RelativeLayout
                 android:id="@+id/layout_buttons"
                 android:layout_width="fill_parent"
-                android:layout_height="230dp">
+                android:layout_height="53dp"
+                android:background="@color/colorPrimaryDark">
+
+                <ImageButton
+                    android:id="@+id/btnCalendarEvent"
+                    android:layout_width="20pt"
+                    android:layout_height="20pt"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/roundprimarydarkbutton"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/calenderwhite"
+                    android:layout_marginRight="5dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:scaleType="fitCenter"/>
 
                 <ImageButton
                     android:id="@+id/btnEditEvent"
                     android:layout_width="20pt"
                     android:layout_height="20pt"
-                    android:layout_alignParentEnd="true"
+                    android:layout_alignBottom="@+id/btnCalendarEvent"
                     android:layout_alignParentTop="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/roundwhitebutton"
+                    android:layout_marginRight="24pt"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toLeftOf="@id/btnCalendarEvent"
+                    android:background="@drawable/roundprimarydarkbutton"
                     android:onClick="onClickEdit"
-                    android:src="@drawable/edit"
+                    android:src="@drawable/editwhite"
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -47,16 +65,19 @@
                     android:id="@+id/btnRemoveEvent"
                     android:layout_width="20pt"
                     android:layout_height="20pt"
-                    android:layout_alignBottom="@+id/btnEditEvent"
+                    android:layout_alignBottom="@+id/btnCalendarEvent"
                     android:layout_toStartOf="@+id/btnEditEvent"
-                    android:background="@drawable/roundwhitebutton"
-                    android:src="@drawable/remove"
+                    android:background="@drawable/roundprimarydarkbutton"
+                    android:src="@drawable/removewhite"
                     android:layout_marginRight="5dp"
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="10dp"
                     android:scaleType="fitCenter"/>
+
+
+
             </RelativeLayout>
 
             <LinearLayout
@@ -72,14 +93,18 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:text="NAME"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#FFFFFF"/>
 
                 <TextView
                     android:id="@+id/txtCreator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:text="CREATED BY ..." />
+                    android:text="CREATED BY ..."
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#FFFFFF"/>
 
                 <Button
                     android:id="@+id/btnDate"
@@ -143,9 +168,10 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="70dp"
                         android:gravity="center|top"
                         android:text="Invite your friends..."
+                        android:paddingTop="10dp"
                         android:textSize="16sp"
                         android:background="@color/colorPrimaryDark"
                         android:textColor="#FFFFFF"/>
@@ -154,7 +180,7 @@
                         android:id="@+id/inviteFriendsInEventList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="40dp"
                         android:background="#FFFFFF"/>
         </RelativeLayout>
 
