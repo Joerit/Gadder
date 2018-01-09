@@ -33,6 +33,11 @@ public class DatesAdapter extends ArrayAdapter<String> {
         this.values = values;
         this.datesSelected = new ArrayList<String>();
     }
+    public List<String> getDatesSelected()
+    {
+        return this.datesSelected;
+    }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
