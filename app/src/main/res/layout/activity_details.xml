@@ -36,6 +36,7 @@
                     android:background="@drawable/roundprimarydarkbutton"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/calenderwhite"
+                    android:onClick="onClickDateAvailableList"
                     android:layout_marginRight="5dp"
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
@@ -67,8 +68,10 @@
                     android:layout_width="20pt"
                     android:layout_height="20pt"
                     android:layout_alignBottom="@+id/btnCalendarEvent"
+                    android:layout_alignTop="@id/btnCalendarEvent"
                     android:layout_toStartOf="@+id/btnEditEvent"
                     android:background="@drawable/roundprimarydarkbutton"
+                    android:onClick="onClickDeleteEvent"
                     android:src="@drawable/removewhite"
                     android:layout_marginRight="5dp"
                     android:paddingBottom="10dp"
@@ -108,22 +111,22 @@
                     android:textColor="#FFFFFF"/>
 
                 <TextView
+<<<<<<< HEAD
                     android:id="@+id/btnDate"
+=======
+                    android:id="@+id/txtDate"
+>>>>>>> 19091247f963513437ff98727a19572150506ba1
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"
                     android:text="DATE"
+<<<<<<< HEAD
                     android:textSize="14pt" />
-
-                <TextView
-                    android:id="@+id/txtDesc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:gravity="center_horizontal"
-                    android:text="DESCRIPTION"
-                    android:textSize="17pt" />
+=======
+                    android:textSize="14pt"
+                    android:layout_marginTop="10dp"/>
+>>>>>>> 19091247f963513437ff98727a19572150506ba1
 
                 <TextView
                     android:id="@+id/txtPlace"
@@ -133,7 +136,18 @@
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"
                     android:text="PLACE"
-                    android:textSize="17pt" />
+                    android:textSize="14pt" />
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal"
+                    android:text="DESCRIPTION"
+                    android:textSize="14pt" />
+
+
 
 
             </LinearLayout>

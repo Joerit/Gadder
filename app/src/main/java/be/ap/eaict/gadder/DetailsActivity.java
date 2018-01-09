@@ -75,9 +75,13 @@ public class DetailsActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void dateAvailableList(View view){
+    public void onClickDateAvailableList(View view){
         Intent intent = new Intent(DetailsActivity.this, DateSelectActivity.class);
         intent.putExtra("eventId", event.getId());
         startActivity(intent);
+    }
+    
+    public void onClickDeleteEvent(View view){
+
     }
 }

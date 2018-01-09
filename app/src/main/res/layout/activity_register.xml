@@ -20,7 +20,8 @@
             android:layout_above="@+id/txtLoginLink"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="396dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            android:scaleType="fitCenter"/>
 
         <TextView
             android:id="@+id/textView7"
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/imageLogo"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="19dp"
             android:text="slogan" />
 
         <TextView
@@ -36,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView7"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="19dp"
             android:text="CREATE ACCOUNT" />
 
 
@@ -51,7 +53,8 @@
             android:layout_marginTop="15dp"
             android:ems="10"
             android:hint="Username"
-            android:paddingStart="5pt"/>
+            android:paddingStart="5pt"
+            android:singleLine="true" />
 
 
         <EditText
@@ -79,7 +82,8 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:paddingStart="5pt"/>
+            android:paddingStart="5pt"
+            android:singleLine="true" />
 
 
         <EditText
@@ -93,7 +97,8 @@
             android:ems="10"
             android:hint="Repeat Password"
             android:inputType="textPassword"
-            android:paddingStart="5pt"/>
+            android:paddingStart="5pt"
+            android:singleLine="true" />
 
         <Button
             android:id="@+id/btnRegister"

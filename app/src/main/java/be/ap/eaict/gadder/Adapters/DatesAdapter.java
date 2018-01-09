@@ -65,9 +65,4 @@ public class DatesAdapter extends ArrayAdapter<String> {
 
         return rowView;
     }
-
-    private void bubbleSort(ArrayList<String> arr){
-        Date datum = Date((int) year, (int) month, (int) date);
-
-    }
 }
