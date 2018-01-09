@@ -76,9 +76,9 @@
                     android:drawableTop="@drawable/logoutwhite"
                     android:onClick="onClickLogout"
                     android:paddingBottom="7dp"
-                    android:paddingLeft="8dp"
+                    android:paddingLeft="10dp"
                     android:paddingRight="7dp"
-                    android:paddingTop="3dp"
+                    android:paddingTop="7dp"
                     android:scaleType="fitCenter"/>
             </RelativeLayout>
 

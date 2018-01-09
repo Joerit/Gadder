@@ -35,6 +35,7 @@
                     android:background="@drawable/roundprimarydarkbutton"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/calenderwhite"
+                    android:onClick="onClickDateAvailableList"
                     android:layout_marginRight="5dp"
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
@@ -66,8 +67,10 @@
                     android:layout_width="20pt"
                     android:layout_height="20pt"
                     android:layout_alignBottom="@+id/btnCalendarEvent"
+                    android:layout_alignTop="@id/btnCalendarEvent"
                     android:layout_toStartOf="@+id/btnEditEvent"
                     android:background="@drawable/roundprimarydarkbutton"
+                    android:onClick="onClickDeleteEvent"
                     android:src="@drawable/removewhite"
                     android:layout_marginRight="5dp"
                     android:paddingBottom="10dp"
@@ -106,24 +109,15 @@
                     android:layout_marginLeft="5dp"
                     android:textColor="#FFFFFF"/>
 
-                <Button
-                    android:id="@+id/btnDate"
+                <TextView
+                    android:id="@+id/txtDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"
                     android:text="DATE"
-                    android:onClick="dateAvailableList"
-                    android:textSize="14pt" />
-
-                <TextView
-                    android:id="@+id/txtDesc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:gravity="center_horizontal"
-                    android:text="DESCRIPTION"
-                    android:textSize="17pt" />
+                    android:textSize="14pt"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:id="@+id/txtPlace"
@@ -133,7 +127,18 @@
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"
                     android:text="PLACE"
-                    android:textSize="17pt" />
+                    android:textSize="14pt" />
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_horizontal"
+                    android:text="DESCRIPTION"
+                    android:textSize="14pt" />
+
+
 
 
             </LinearLayout>
