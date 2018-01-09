@@ -72,7 +72,7 @@ public class DetailsActivity extends AppCompatActivity
 
         InvitationAdapter invitationAdapter = new InvitationAdapter(this, FBRepository.getInstance().getUsers(), event);
         friendInviteList.setAdapter(invitationAdapter);
-        
+
         _id = (int)getIntent().getExtras().get("id");
         event = FBRepository.getInstance().getEvent(_id);
         TextView txtName = (TextView)findViewById(R.id.txtName);
