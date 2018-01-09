@@ -91,7 +91,6 @@ public class DetailsActivity extends AppCompatActivity
 
     private String mostPopulairDate(){
         Collection<Invite> invitedUsers = event.getInvitedUsers().values();
-        Log.d("joeriiscool",invitedUsers.toString());
         HashMap<String, Integer> populairity = new HashMap<String, Integer>();
 
 
@@ -134,6 +133,7 @@ public class DetailsActivity extends AppCompatActivity
     }
     
     public void onClickDeleteEvent(View view){
-
+        //Delete event
+        //Delete users die met het event te maken hebben
     }
 }
