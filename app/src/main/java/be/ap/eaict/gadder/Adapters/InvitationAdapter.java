@@ -51,6 +51,9 @@ public class InvitationAdapter extends ArrayAdapter<User> {
             @Override
             public void onClick(View v) {
                 event.addInvitedUser(values.get(position));
+                FBRepository.getInstance().updateEvent(event);
+                values.get(position).addEvent(event);
+                FBRepository.getInstance().updateUser(values.get(position));
                 Toast.makeText(context, "added " + values.get(position).getUsername(), Toast.LENGTH_SHORT).show();
             }
         });
