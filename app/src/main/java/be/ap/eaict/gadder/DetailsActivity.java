@@ -89,10 +89,6 @@ public class DetailsActivity extends AppCompatActivity
     }
 
     public void openEditActivity(){
-        String txtWhat = new String();
-        String txtHow = new String();
-        String txtWhere = new String();
-        String txtDate = new String();
 
         Intent intent = new Intent(DetailsActivity.this, EditActivity.class);
         intent.putExtra("eventId", event.getId());
