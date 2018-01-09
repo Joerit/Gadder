@@ -15,7 +15,9 @@ import java.util.List;
 
 import be.ap.eaict.gadder.Adapters.DatesAdapter;
 import be.ap.eaict.gadder.DOM.Datum;
+import be.ap.eaict.gadder.DOM.Event;
 import be.ap.eaict.gadder.DOM.FBRepository;
+import be.ap.eaict.gadder.DOM.GlobalData;
 
 /**
  * Created by Ruben on 28-12-2017.
@@ -45,8 +47,10 @@ public class DateSelectActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<String> temp = datum.bubbleSort((ArrayList<String>) adapter.getDatesSelected());
-                Log.d("checkboxchanged", temp.toString());
+                Event event = FBRepository.getInstance().getEvent(_id);
+                event.getInvitedUsers().get(GlobalData.currentUser.getUsername()).setDates((ArrayList<String>) datum.bubbleSort((ArrayList<String>) adapter.getDatesSelected()));
+                FBRepository.getInstance().createOrUpdateEvent(event);
+                finish();
             }
         });
 
