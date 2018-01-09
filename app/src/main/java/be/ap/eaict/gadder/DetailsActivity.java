@@ -83,20 +83,16 @@ public class DetailsActivity extends AppCompatActivity
     public void fillData(){
         TextView txtDate = (TextView) findViewById(R.id.txtDate);
         TextView txtPlace = (TextView) findViewById(R.id.txtPlace);
-        TextView txtDescription = (TextView) findViewById(R.id.txtDescription);
+        TextView txtDesc = (TextView) findViewById(R.id.txtDesc);
 
-        for(Event event : FBRepository.getInstance().getEventsByUser(GlobalData.currentUser)){
-            if(event.getId() == _id){
-                txtDate.setText(mostPopulairDate());
-                txtPlace.setText(event.getPlace());
-                //txtDescription.setText(event.getDescription());
-            }
-        }
+        Event event = FBRepository.getInstance().getEvent(_id);
+        txtDate.setText(mostPopulairDate());
+        txtPlace.setText(event.getPlace());
+        txtDesc.setText(event.getDescription());
     }
 
     private String mostPopulairDate(){
         Collection<Invite> invitedUsers = event.getInvitedUsers().values();
-        Log.d("joeriiscool",invitedUsers.toString());
         HashMap<String, Integer> populairity = new HashMap<String, Integer>();
 
 
@@ -139,6 +135,7 @@ public class DetailsActivity extends AppCompatActivity
     }
     
     public void onClickDeleteEvent(View view){
-
+        //Delete event
+        //Delete users die met het event te maken hebben
     }
 }
