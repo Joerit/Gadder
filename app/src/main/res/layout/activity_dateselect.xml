@@ -7,14 +7,23 @@
     android:layout_height="match_parent"
     tools:context="be.ap.eaict.gadder.DateSelectActivity">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/linear1"
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView android:id="@+id/listDates"
+            android:layout_height="0dip"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+        android:id="@+id/btnCreate"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="50dp"
+        android:text="Save"
+        android:background="@drawable/styledbuttons"
+        android:textColor="@drawable/buttoncolorwhite"/>
+
     </LinearLayout>
-    <ListView
-        android:id="@+id/listDates"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+
     </android.support.constraint.ConstraintLayout>

@@ -29,6 +29,7 @@
 
                 <ImageButton
                     android:id="@+id/btnCalendarEvent"
+                    android:onClick="dateAvailableList"
                     android:layout_width="20pt"
                     android:layout_height="20pt"
                     android:layout_alignParentEnd="true"
@@ -106,14 +107,13 @@
                     android:layout_marginLeft="5dp"
                     android:textColor="#FFFFFF"/>
 
-                <Button
+                <TextView
                     android:id="@+id/btnDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:gravity="center_horizontal"
                     android:text="DATE"
-                    android:onClick="dateAvailableList"
                     android:textSize="14pt" />
 
                 <TextView

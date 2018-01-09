@@ -29,7 +29,7 @@ public class DateSelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dateselect);
 
-        _id = (int)getIntent().getExtras().get("id");
+        _id = (int)getIntent().getExtras().get("eventId");
         final ListView dates = (ListView) findViewById(R.id.listDates);
         final DatesAdapter adapter = new DatesAdapter(this, FBRepository.getInstance().getDatesAvailableById(_id));
 
