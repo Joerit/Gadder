@@ -1,6 +1,7 @@
 package be.ap.eaict.gadder.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class InvitationAdapter extends ArrayAdapter<User> {
         //Insert data
 
         TextView txtFriendNameForEvent = (TextView) rowView.findViewById(R.id.txtInviteFriendInEventName);
-        Button btnInviteFriend = (Button)rowView.findViewById(R.id.btnInviteFriend);
+        final Button btnInviteFriend = (Button)rowView.findViewById(R.id.btnInviteFriend);
 
         txtFriendNameForEvent.setText(values.get(position).getUsername());
         btnInviteFriend.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +56,8 @@ public class InvitationAdapter extends ArrayAdapter<User> {
                 values.get(position).addEvent(event);
                 FBRepository.getInstance().updateUser(values.get(position));
                 Toast.makeText(context, "added " + values.get(position).getUsername(), Toast.LENGTH_SHORT).show();
+                btnInviteFriend.setEnabled(false);
+                btnInviteFriend.setBackgroundColor(Color.GRAY);
             }
         });
 

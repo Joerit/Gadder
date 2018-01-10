@@ -30,7 +30,7 @@
             android:layout_alignBottom="@+id/imageLogo"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="19dp"
-            android:text="slogan" />
+            android:text="Gadder Your Friends" />
 
         <TextView
             android:id="@+id/textView11"

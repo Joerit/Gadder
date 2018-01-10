@@ -87,6 +87,6 @@
             android:layout_above="@+id/txtUserName"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="35dp"
-            android:text="slogan" />
+            android:text="Gadder Your Friends" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
